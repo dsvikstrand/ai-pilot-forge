@@ -40,12 +40,13 @@ export function ServicesOverview() {
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <ServiceCard
               key={service.title}
               icon={service.icon}
               title={service.title}
               description={service.description}
+              delay={index * 100}
             />
           ))}
         </div>
