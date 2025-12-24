@@ -89,7 +89,7 @@ const Pilots = () => {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-3">
-            {pilots.map((pilot) => (
+            {pilots.map((pilot, index) => (
               <PilotCard
                 key={pilot.title}
                 title={pilot.title}
@@ -97,6 +97,7 @@ const Pilots = () => {
                 description={pilot.description}
                 deliverables={pilot.deliverables}
                 featured={pilot.featured}
+                delay={index * 100}
               />
             ))}
           </div>

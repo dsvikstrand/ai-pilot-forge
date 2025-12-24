@@ -1,7 +1,8 @@
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 interface PilotCardProps {
   title: string;
@@ -9,15 +10,22 @@ interface PilotCardProps {
   description: string;
   deliverables: string[];
   featured?: boolean;
+  delay?: number;
 }
 
-export function PilotCard({ title, duration, description, deliverables, featured = false }: PilotCardProps) {
+export function PilotCard({ title, duration, description, deliverables, featured = false, delay = 0 }: PilotCardProps) {
+  const ref = useScrollReveal<HTMLDivElement>();
+
   return (
-    <Card className={`relative overflow-hidden border-border/50 transition-all duration-300 hover:shadow-medium ${
-      featured ? "border-accent shadow-glow" : ""
-    }`}>
+    <Card 
+      ref={ref}
+      className={`scroll-reveal group relative overflow-hidden border-border/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-medium ${
+        featured ? "border-accent shadow-glow ring-1 ring-accent/20" : ""
+      }`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
       {featured && (
-        <div className="absolute right-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
+        <div className="absolute right-4 top-4 animate-pulse rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
           Popular
         </div>
       )}
@@ -35,8 +43,11 @@ export function PilotCard({ title, duration, description, deliverables, featured
             </li>
           ))}
         </ul>
-        <Button asChild className="w-full" variant={featured ? "default" : "outline"}>
-          <Link to="/contact">Get started</Link>
+        <Button asChild className="group/btn w-full" variant={featured ? "default" : "outline"}>
+          <Link to="/contact">
+            Get started
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+          </Link>
         </Button>
       </CardContent>
     </Card>

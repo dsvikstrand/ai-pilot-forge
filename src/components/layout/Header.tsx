@@ -74,39 +74,46 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="border-t border-border bg-background md:hidden">
-          <nav className="container mx-auto flex flex-col gap-2 px-4 py-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`rounded-md px-4 py-3 text-sm font-medium transition-colors ${
-                  location.pathname === link.href
-                    ? "bg-secondary text-primary"
-                    : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <button className="font-medium text-foreground">EN</button>
-                <span>/</span>
-                <button className="hover:text-foreground">SV</button>
-              </div>
-              <Button asChild size="sm">
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  Book a call
-                </Link>
-              </Button>
+      {/* Mobile Menu with animation */}
+      <div 
+        className={`absolute left-0 right-0 top-16 z-40 border-b border-border bg-background shadow-medium transition-all duration-300 ease-out md:hidden ${
+          mobileMenuOpen 
+            ? "translate-y-0 opacity-100" 
+            : "-translate-y-4 pointer-events-none opacity-0"
+        }`}
+      >
+        <nav className="container mx-auto flex flex-col gap-2 px-4 py-4">
+          {navLinks.map((link, index) => (
+            <Link
+              key={link.href}
+              to={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`rounded-md px-4 py-3 text-sm font-medium transition-all ${
+                location.pathname === link.href
+                  ? "bg-secondary text-primary"
+                  : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+              }`}
+              style={{ 
+                transitionDelay: mobileMenuOpen ? `${index * 50}ms` : "0ms",
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <button className="rounded px-2 py-1 font-medium text-foreground transition-colors hover:bg-secondary">EN</button>
+              <span>/</span>
+              <button className="rounded px-2 py-1 transition-colors hover:bg-secondary hover:text-foreground">SV</button>
             </div>
-          </nav>
-        </div>
-      )}
+            <Button asChild size="sm">
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                Book a call
+              </Link>
+            </Button>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

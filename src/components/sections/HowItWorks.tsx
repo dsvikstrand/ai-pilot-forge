@@ -1,4 +1,5 @@
 import { Target, Wrench, Rocket } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const steps = [
   {
@@ -21,6 +22,27 @@ const steps = [
   },
 ];
 
+function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
+  const ref = useScrollReveal<HTMLDivElement>();
+  
+  return (
+    <div 
+      ref={ref}
+      className="scroll-reveal relative text-center"
+      style={{ transitionDelay: `${index * 150}ms` }}
+    >
+      <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform duration-300 hover:scale-110">
+        <step.icon className="h-7 w-7" />
+      </div>
+      <span className="mb-2 block text-sm font-medium text-accent">
+        Step {step.number}
+      </span>
+      <h3 className="mb-3 text-xl font-semibold">{step.title}</h3>
+      <p className="text-sm text-muted-foreground">{step.description}</p>
+    </div>
+  );
+}
+
 export function HowItWorks() {
   return (
     <section className="bg-secondary/30 py-20 lg:py-28">
@@ -32,17 +54,8 @@ export function HowItWorks() {
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
-          {steps.map((step) => (
-            <div key={step.number} className="relative text-center">
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                <step.icon className="h-7 w-7" />
-              </div>
-              <span className="mb-2 block text-sm font-medium text-accent">
-                Step {step.number}
-              </span>
-              <h3 className="mb-3 text-xl font-semibold">{step.title}</h3>
-              <p className="text-sm text-muted-foreground">{step.description}</p>
-            </div>
+          {steps.map((step, index) => (
+            <StepCard key={step.number} step={step} index={index} />
           ))}
         </div>
       </div>
