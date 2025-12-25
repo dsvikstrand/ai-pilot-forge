@@ -2,19 +2,22 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 import vdsLogo from "@/assets/vds-logo.jpg";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/pilots", label: "AI Pilots" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { language, setLanguage } = useLanguage();
+
+  const navLinks = [
+    { href: "/", label: t(translations.nav.home, language) },
+    { href: "/services", label: t(translations.nav.services, language) },
+    { href: "/pilots", label: t(translations.nav.pilots, language) },
+    { href: "/about", label: t(translations.nav.about, language) },
+    { href: "/contact", label: t(translations.nav.contact, language) },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md">
@@ -51,12 +54,22 @@ export function Header() {
         {/* Desktop CTA & Language */}
         <div className="hidden items-center gap-4 md:flex">
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
-            <button className="px-2 py-1 font-medium text-foreground">EN</button>
+            <button 
+              onClick={() => setLanguage("en")}
+              className={`px-2 py-1 transition-colors ${language === "en" ? "font-medium text-foreground" : "hover:text-foreground"}`}
+            >
+              EN
+            </button>
             <span>/</span>
-            <button className="px-2 py-1 hover:text-foreground">SV</button>
+            <button 
+              onClick={() => setLanguage("sv")}
+              className={`px-2 py-1 transition-colors ${language === "sv" ? "font-medium text-foreground" : "hover:text-foreground"}`}
+            >
+              SV
+            </button>
           </div>
           <Button asChild size="sm">
-            <Link to="/contact">Book a call</Link>
+            <Link to="/contact">{t(translations.nav.bookCall, language)}</Link>
           </Button>
         </div>
 
@@ -102,13 +115,23 @@ export function Header() {
           ))}
           <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <button className="rounded px-2 py-1 font-medium text-foreground transition-colors hover:bg-secondary">EN</button>
+              <button 
+                onClick={() => setLanguage("en")}
+                className={`rounded px-2 py-1 transition-colors hover:bg-secondary ${language === "en" ? "font-medium text-foreground" : "hover:text-foreground"}`}
+              >
+                EN
+              </button>
               <span>/</span>
-              <button className="rounded px-2 py-1 transition-colors hover:bg-secondary hover:text-foreground">SV</button>
+              <button 
+                onClick={() => setLanguage("sv")}
+                className={`rounded px-2 py-1 transition-colors hover:bg-secondary ${language === "sv" ? "font-medium text-foreground" : "hover:text-foreground"}`}
+              >
+                SV
+              </button>
             </div>
             <Button asChild size="sm">
               <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                Book a call
+                {t(translations.nav.bookCall, language)}
               </Link>
             </Button>
           </div>

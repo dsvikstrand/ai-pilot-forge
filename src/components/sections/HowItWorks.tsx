@@ -1,28 +1,9 @@
 import { Target, Wrench, Rocket } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
-const steps = [
-  {
-    icon: Target,
-    number: "01",
-    title: "Define success",
-    description: "Clarify your data, success metric, and constraints upfront.",
-  },
-  {
-    icon: Wrench,
-    number: "02",
-    title: "Build a pilot",
-    description: "Create a working prototype with baseline and proper evaluation.",
-  },
-  {
-    icon: Rocket,
-    number: "03",
-    title: "Ship or iterate",
-    description: "Get a clear handoff plan or continue building based on results.",
-  },
-];
-
-function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
+function StepCard({ step, index }: { step: { icon: any; number: string; title: string; description: string }; index: number }) {
   const ref = useScrollReveal<HTMLDivElement>();
   
   return (
@@ -44,13 +25,38 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
 }
 
 export function HowItWorks() {
+  const { language } = useLanguage();
+
+  const steps = [
+    {
+      icon: Target,
+      number: "01",
+      title: t(translations.howItWorks.step1.title, language),
+      description: t(translations.howItWorks.step1.description, language),
+    },
+    {
+      icon: Wrench,
+      number: "02",
+      title: t(translations.howItWorks.step2.title, language),
+      description: t(translations.howItWorks.step2.description, language),
+    },
+    {
+      icon: Rocket,
+      number: "03",
+      title: t(translations.howItWorks.step3.title, language),
+      description: t(translations.howItWorks.step3.description, language),
+    },
+  ];
+
   return (
     <section className="bg-secondary/30 py-20 lg:py-28">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">How it works</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            {t(translations.howItWorks.title, language)}
+          </h2>
           <p className="mt-4 text-muted-foreground">
-            A clear, predictable process designed to reduce risk and deliver results.
+            {t(translations.howItWorks.subtitle, language)}
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-3">

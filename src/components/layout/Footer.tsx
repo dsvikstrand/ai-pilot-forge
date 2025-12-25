@@ -1,21 +1,25 @@
 import { Link } from "react-router-dom";
 import { Github, Linkedin } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 import vdsLogo from "@/assets/vds-logo.jpg";
 
-const footerLinks = {
-  company: [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/pilots", label: "AI Pilots" },
-    { href: "/about", label: "About" },
-  ],
-  legal: [
-    { href: "/contact", label: "Contact" },
-    { href: "/privacy", label: "Privacy Policy" },
-  ],
-};
-
 export function Footer() {
+  const { language } = useLanguage();
+
+  const footerLinks = {
+    company: [
+      { href: "/", label: t(translations.nav.home, language) },
+      { href: "/services", label: t(translations.nav.services, language) },
+      { href: "/pilots", label: t(translations.nav.pilots, language) },
+      { href: "/about", label: t(translations.nav.about, language) },
+    ],
+    legal: [
+      { href: "/contact", label: t(translations.nav.contact, language) },
+      { href: "/privacy", label: t(translations.footer.privacy, language) },
+    ],
+  };
+
   return (
     <footer className="border-t border-border bg-secondary/30">
       <div className="container mx-auto px-4 py-12 lg:px-8">
@@ -33,7 +37,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
-              GPU-powered AI pilots for Swedish SMEs. From idea to working prototype—fast, measurable, and built to ship.
+              {t(translations.footer.tagline, language)}
             </p>
             <div className="mt-6 flex gap-4">
               <a
@@ -59,7 +63,9 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold text-foreground">Company</h4>
+            <h4 className="mb-4 text-sm font-semibold text-foreground">
+              {t(translations.footer.company, language)}
+            </h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
@@ -76,7 +82,9 @@ export function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold text-foreground">Legal</h4>
+            <h4 className="mb-4 text-sm font-semibold text-foreground">
+              {t(translations.footer.legal, language)}
+            </h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.href}>
@@ -93,7 +101,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Vikstrand Deep Solutions. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Vikstrand Deep Solutions. {t(translations.footer.copyright, language)}</p>
         </div>
       </div>
     </footer>
