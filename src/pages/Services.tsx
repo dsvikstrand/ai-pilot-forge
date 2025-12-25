@@ -2,84 +2,46 @@ import { Layout } from "@/components/layout/Layout";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { Search, Image, Zap, Tags, Boxes, FileCode, CheckCircle2 } from "lucide-react";
-
-const services = [
-  {
-    icon: Search,
-    title: "RAG fit-check & evaluation",
-    description: "Validate whether Retrieval-Augmented Generation (RAG) is the right approach for your use case. We assess data quality, design retrieval strategies, and measure quality before you ship—so you know what works and what doesn't.",
-  },
-  {
-    icon: Image,
-    title: "Visual search from images",
-    description: "Find similar products from a photo using embeddings and fast search pipelines. Ideal for e-commerce, inventory management, and catalog search where visual matching outperforms text-based queries.",
-  },
-  {
-    icon: Zap,
-    title: "Inference speed & GPU cost optimization",
-    description: "Profile bottlenecks in your ML pipelines, improve throughput and latency, and reduce serving cost. We identify exactly where time and money are being spent—and fix it.",
-  },
-  {
-    icon: Tags,
-    title: "Auto-tagging & categorization",
-    description: "Turn image libraries into structured catalogs with reliable tagging workflows. Reduce manual labeling effort and improve consistency across large datasets.",
-  },
-  {
-    icon: Boxes,
-    title: "Custom prototyping",
-    description: "Build and test a prototype model or pipeline with clear success metrics. Move from idea to working system with proper engineering and evaluation from day one.",
-  },
-  {
-    icon: FileCode,
-    title: "Deployment guidance",
-    description: "Get practical advice on moving from prototype to production. We help with architecture decisions, infrastructure choices, and handoff documentation your team can actually use.",
-  },
-];
-
-const deliverables = [
-  "Working prototype with source code and documentation",
-  "Baseline metrics and evaluation results",
-  "Performance profiling (latency, throughput, cost)",
-  "Clear next-step recommendations",
-  "Handoff-ready deliverables your team can own",
-];
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations, t, tArray } from "@/i18n/translations";
 
 const Services = () => {
+  const { language } = useLanguage();
+
+  const services = [
+    { icon: Search, title: t(translations.services.rag.title, language), description: t(translations.services.rag.descriptionLong, language) },
+    { icon: Image, title: t(translations.services.visualSearch.title, language), description: t(translations.services.visualSearch.descriptionLong, language) },
+    { icon: Zap, title: t(translations.services.inference.title, language), description: t(translations.services.inference.descriptionLong, language) },
+    { icon: Tags, title: t(translations.services.autoTagging.title, language), description: t(translations.services.autoTagging.descriptionLong, language) },
+    { icon: Boxes, title: t(translations.services.prototyping.title, language), description: t(translations.services.prototyping.descriptionLong, language) },
+    { icon: FileCode, title: t(translations.services.deployment.title, language), description: t(translations.services.deployment.descriptionLong, language) },
+  ];
+
+  const deliverables = tArray(translations.servicesPage.deliverables.items, language);
+
   return (
     <Layout>
-      {/* Hero */}
       <section className="bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold md:text-5xl">Services</h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Practical AI solutions built with strong engineering and clear evaluation. Every engagement focuses on measurable outcomes.
-            </p>
+            <h1 className="text-4xl font-bold md:text-5xl">{t(translations.servicesPage.title, language)}</h1>
+            <p className="mt-4 text-lg text-muted-foreground">{t(translations.servicesPage.subtitle, language)}</p>
           </div>
         </div>
       </section>
-
-      {/* Services Grid */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <ServiceCard
-                key={service.title}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-              />
+              <ServiceCard key={service.title} icon={service.icon} title={service.title} description={service.description} />
             ))}
           </div>
         </div>
       </section>
-
-      {/* Deliverables */}
       <section className="bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl">
-            <h2 className="mb-8 text-center text-3xl font-bold">Typical deliverables</h2>
+            <h2 className="mb-8 text-center text-3xl font-bold">{t(translations.servicesPage.deliverables.title, language)}</h2>
             <div className="rounded-xl border border-border bg-card p-8 shadow-soft">
               <ul className="space-y-4">
                 {deliverables.map((item, index) => (
@@ -93,7 +55,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-
       <ContactCTA />
     </Layout>
   );

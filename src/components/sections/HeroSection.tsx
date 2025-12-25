@@ -1,8 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 export function HeroSection() {
+  const { language } = useLanguage();
+
   return (
     <section className="relative overflow-hidden hero-gradient">
       {/* Animated background decoration */}
@@ -14,20 +18,20 @@ export function HeroSection() {
       <div className="container relative mx-auto px-4 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="animate-fade-up text-balance text-4xl font-bold tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
-            GPU-powered AI pilots for Swedish SMEs
+            {t(translations.hero.title, language)}
           </h1>
           <p className="animate-fade-up animation-delay-200 mt-6 text-lg text-primary-foreground/80 md:text-xl" style={{ opacity: 0 }}>
-            From idea to a working prototype—fast, measurable, and built to ship.
+            {t(translations.hero.subtitle, language)}
           </p>
           <div className="animate-fade-up animation-delay-400 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row" style={{ opacity: 0 }}>
             <Button asChild variant="hero" size="xl" className="group">
               <Link to="/contact">
-                Book a short call
+                {t(translations.hero.cta, language)}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button asChild variant="heroOutline" size="xl">
-              <Link to="/services">Explore services</Link>
+              <Link to="/services">{t(translations.hero.ctaSecondary, language)}</Link>
             </Button>
           </div>
         </div>

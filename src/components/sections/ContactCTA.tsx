@@ -3,9 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 export function ContactCTA() {
   const { toast } = useToast();
+  const { language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -22,8 +25,8 @@ export function ContactCTA() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     
     toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      title: t(translations.contact.success, language),
+      description: t(translations.contact.successDesc, language),
     });
     
     setFormData({ name: "", email: "", company: "", message: "" });
@@ -36,17 +39,17 @@ export function ContactCTA() {
         <div className="mx-auto max-w-2xl">
           <div className="mb-10 text-center">
             <h2 className="text-3xl font-bold text-primary-foreground md:text-4xl">
-              Let's talk
+              {t(translations.contact.title, language)}
             </h2>
             <p className="mt-4 text-primary-foreground/80">
-              Share what you're building and what "success" looks like. I'll respond with a concrete next step.
+              {t(translations.contact.subtitle, language)}
             </p>
           </div>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
                 <Input
-                  placeholder="Your name"
+                  placeholder={t(translations.contact.name, language)}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
@@ -56,7 +59,7 @@ export function ContactCTA() {
               <div>
                 <Input
                   type="email"
-                  placeholder="Email address"
+                  placeholder={t(translations.contact.email, language)}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
@@ -66,7 +69,7 @@ export function ContactCTA() {
             </div>
             <div>
               <Input
-                placeholder="Company (optional)"
+                placeholder={t(translations.contact.company, language)}
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                 className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-primary-foreground/40"
@@ -74,7 +77,7 @@ export function ContactCTA() {
             </div>
             <div>
               <Textarea
-                placeholder="Tell me about your project and what you're trying to achieve..."
+                placeholder={t(translations.contact.message, language)}
                 rows={5}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -89,7 +92,7 @@ export function ContactCTA() {
               className="w-full"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Send message"}
+              {isSubmitting ? t(translations.contact.submitting, language) : t(translations.contact.submit, language)}
             </Button>
           </form>
         </div>
