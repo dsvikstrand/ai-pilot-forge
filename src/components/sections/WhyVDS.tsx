@@ -36,21 +36,35 @@ export function WhyVDS() {
           <div className="relative">
             <div className="aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 p-8">
               <div className="flex h-full flex-col justify-center space-y-4 rounded-xl border border-border/50 bg-card p-6 shadow-soft">
-                <h3 className="text-lg font-semibold">
-                  {t(translations.whyVds.outcomes.title, language)}
-                </h3>
+                <div className="flex items-center gap-3">
+                  <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+                    {t(translations.whyVds.caseStudy.badge, language)}
+                  </span>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">
+                    {t(translations.whyVds.caseStudy.client, language)}
+                  </p>
+                  <h3 className="text-lg font-semibold">
+                    {t(translations.whyVds.caseStudy.title, language)}
+                  </h3>
+                </div>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                    {t(translations.whyVds.outcomes.prototype, language)}
+                    {t(translations.whyVds.caseStudy.responseTime, language)}
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                    {t(translations.whyVds.outcomes.metrics, language)}
+                    {t(translations.whyVds.caseStudy.accuracy, language)}
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                    {t(translations.whyVds.outcomes.plan, language)}
+                    {t(translations.whyVds.caseStudy.images, language)}
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                    {t(translations.whyVds.caseStudy.production, language)}
                   </li>
                 </ul>
               </div>
