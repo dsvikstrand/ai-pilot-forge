@@ -88,11 +88,14 @@ export const translations = {
       gpu: { sv: "GPU-optimerade pipelines för produktionsarbetsbelastningar", en: "GPU-optimized pipelines for production workloads" },
       honest: { sv: "Ärliga bedömningar—inklusive när AI inte är rätt lösning", en: "Honest assessments—including when AI isn't the right solution" },
     },
-    outcomes: {
-      title: { sv: "Typiska resultat", en: "Typical outcomes" },
-      prototype: { sv: "En fungerande prototyp (inte slides)", en: "A working prototype (not slides)" },
-      metrics: { sv: "Tydliga utvärderingsmått och baslinjer", en: "Clear evaluation metrics and baselines" },
-      plan: { sv: "En plan för driftsättning, iteration eller ett stopp-beslut", en: "A plan for deployment, iteration, or a no-go decision" },
+    caseStudy: {
+      badge: { sv: "Fallstudie", en: "Case Study" },
+      client: { sv: "Rörstrand Museum", en: "Rörstrand Museum" },
+      title: { sv: "Kulturarv + AI", en: "Cultural Heritage + AI" },
+      responseTime: { sv: "Svarstid från veckor till sekunder", en: "Response time from weeks to seconds" },
+      accuracy: { sv: "87% träffsäkerhet på produktionsdata", en: "87% accuracy on production data" },
+      images: { sv: "17 000+ bilder i träningspipeline", en: "17,000+ images in training pipeline" },
+      production: { sv: "Produktionsklar lösning i drift", en: "Production-ready solution deployed" },
     },
   },
 
