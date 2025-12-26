@@ -57,6 +57,68 @@ export const translations = {
       description: { sv: "Praktisk rådgivning för att gå från prototyp till produktion.", en: "Get practical advice on moving from prototype to production." },
       descriptionLong: { sv: "Få praktisk rådgivning för att gå från prototyp till produktion. Vi hjälper till med arkitekturbeslut, infrastrukturval och överlämningsdokumentation som ditt team faktiskt kan använda.", en: "Get practical advice on moving from prototype to production. We help with architecture decisions, infrastructure choices, and handoff documentation your team can actually use." },
     },
+    agenticWorkflows: {
+      title: { sv: "Agentiska arbetsflöden", en: "Agentic Workflows" },
+      description: { sv: "AI-agenter som självständigt utför komplexa flerstegsuppgifter—från datainsamling till beslutsfattande—med mänsklig kontroll.", en: "AI agents that autonomously execute complex multi-step tasks—from data retrieval to decision-making—with human-in-the-loop control." },
+      descriptionLong: { sv: "AI-agenter som självständigt utför komplexa flerstegsuppgifter—från datainsamling till beslutsfattande—med mänsklig kontroll och tydliga säkerhetsmekanismer.", en: "AI agents that autonomously execute complex multi-step tasks—from data retrieval to decision-making—with human-in-the-loop control and clear guardrails." },
+    },
+  },
+
+  // Agentic Workflows Section
+  agenticSection: {
+    badge: { sv: "Ny kapacitet", en: "New Capability" },
+    title: { sv: "Agentiska AI-arbetsflöden", en: "Agentic AI Workflows" },
+    subtitle: { sv: "Från enkla automatiseringar till autonoma system som fattar beslut, hämtar data och utför åtgärder—på dina villkor.", en: "From simple automations to autonomous systems that make decisions, retrieve data, and take actions—on your terms." },
+    whatIs: {
+      title: { sv: "Vad är en AI-agent?", en: "What is an AI agent?" },
+      description: { sv: "En agent är ett AI-system som självständigt utför uppgifter å dina vägnar. Till skillnad från enkla chatbots kan agenter styra arbetsflöden, använda verktyg och fatta beslut baserat på kontext.", en: "An agent is an AI system that independently accomplishes tasks on your behalf. Unlike simple chatbots, agents can control workflows, use tools, and make decisions based on context." },
+    },
+    components: {
+      title: { sv: "Kärnkomponenter", en: "Core Components" },
+      model: { 
+        title: { sv: "Modell", en: "Model" }, 
+        description: { sv: "LLM som driver agentens resonemang och beslutsfattande", en: "LLM powering the agent's reasoning and decision-making" } 
+      },
+      tools: { 
+        title: { sv: "Verktyg", en: "Tools" }, 
+        description: { sv: "API:er och funktioner agenten använder för att agera", en: "APIs and functions the agent uses to take action" } 
+      },
+      guardrails: { 
+        title: { sv: "Säkerhetsmekanismer", en: "Guardrails" }, 
+        description: { sv: "Regler som definierar hur agenten får bete sig", en: "Rules that define how the agent is allowed to behave" } 
+      },
+    },
+    useCases: {
+      title: { sv: "Idealiska användningsfall", en: "Ideal Use Cases" },
+      complex: { 
+        title: { sv: "Komplexa beslut", en: "Complex Decisions" }, 
+        description: { sv: "Arbetsflöden med undantag, kontext-känsliga beslut och nyanser som traditionell automation missar.", en: "Workflows with exceptions, context-sensitive decisions, and nuances that traditional automation misses." } 
+      },
+      unstructured: { 
+        title: { sv: "Ostrukturerad data", en: "Unstructured Data" }, 
+        description: { sv: "Tolka naturligt språk, extrahera mening från dokument, eller interagera konversationellt.", en: "Interpreting natural language, extracting meaning from documents, or interacting conversationally." } 
+      },
+      multiSystem: { 
+        title: { sv: "Multisystem-integration", en: "Multi-System Integration" }, 
+        description: { sv: "Koordinera åtgärder över flera API:er, databaser och tjänster i ett sammanhängande flöde.", en: "Coordinate actions across multiple APIs, databases, and services in a cohesive flow." } 
+      },
+    },
+    patterns: {
+      title: { sv: "Orkestreringsmönster", en: "Orchestration Patterns" },
+      single: { 
+        title: { sv: "Enkel agent", en: "Single Agent" }, 
+        description: { sv: "En agent med verktyg som hanterar hela arbetsflödet. Börja här.", en: "One agent with tools handling the entire workflow. Start here." } 
+      },
+      manager: { 
+        title: { sv: "Manager-mönster", en: "Manager Pattern" }, 
+        description: { sv: "En central agent delegerar till specialiserade agenter via verktygsanrop.", en: "A central agent delegates to specialized agents via tool calls." } 
+      },
+      decentralized: { 
+        title: { sv: "Decentraliserat", en: "Decentralized" }, 
+        description: { sv: "Agenter som peers överlämnar uppgifter till varandra baserat på specialisering.", en: "Agents as peers hand off tasks to each other based on specialization." } 
+      },
+    },
+    cta: { sv: "Diskutera ett agentiskt projekt", en: "Discuss an agentic project" },
   },
 
   // How it works
