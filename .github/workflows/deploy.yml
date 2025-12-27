@@ -36,12 +36,29 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Optional: SPA routing fix (uncomment if you use react-router BrowserRouter and deep links 404)
+      - name: Ensure no Jekyll
+        run: touch dist/.nojekyll
+
+      # If you use react-router BrowserRouter and want refresh/deep-link support:
       # - name: SPA fallback
       #   run: cp dist/index.html dist/404.html
 
+      - name: Debug dist
+        run: |
+          echo "=== dist tree (top) ==="
+          ls -la dist || true
+          echo "=== find index.html ==="
+          find dist -maxdepth 3 -type f -name "index.html" -print || true
+          echo "=== first 30 files ==="
+          find dist -maxdepth 3 -type f | head -n 30
+
+      - name: Ensure index.html exists at dist root
+        run: test -f dist/index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
