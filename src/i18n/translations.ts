@@ -52,6 +52,11 @@ export const translations = {
       description: { sv: "Bygg och testa en prototypmodell/pipeline med tydliga framgångsmått.", en: "Build and test a prototype model/pipeline with clear success metrics." },
       descriptionLong: { sv: "Bygg och testa en prototypmodell eller pipeline med tydliga framgångsmått. Gå från idé till fungerande system med korrekt ingenjörskonst och utvärdering från dag ett.", en: "Build and test a prototype model or pipeline with clear success metrics. Move from idea to working system with proper engineering and evaluation from day one." },
     },
+    agenticWorkflows: {
+      title: { sv: "Agentiska arbetsflöden", en: "Agentic Workflows" },
+      description: { sv: "Skräddarsydda AI-agenter som autonomt utför komplexa flerstegsuppgifter—från datahämtning till beslutsfattande—med mänsklig kontroll.", en: "Custom AI agents that autonomously execute complex multi-step tasks—from data retrieval to decision-making—with human-in-the-loop guardrails." },
+      descriptionLong: { sv: "Skräddarsydda AI-agenter som autonomt utför komplexa flerstegsuppgifter—från datahämtning till beslutsfattande—med mänsklig kontroll och inbyggda säkerhetsmekanismer.", en: "Custom AI agents that autonomously execute complex multi-step tasks—from data retrieval to decision-making—with human-in-the-loop guardrails and built-in safety mechanisms." },
+    },
     deployment: {
       title: { sv: "Driftsättningsvägledning", en: "Deployment guidance" },
       description: { sv: "Praktisk rådgivning för att gå från prototyp till produktion.", en: "Get practical advice on moving from prototype to production." },

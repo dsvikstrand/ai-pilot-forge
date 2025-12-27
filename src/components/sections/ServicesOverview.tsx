@@ -1,4 +1,4 @@
-import { Search, Image, Zap, Tags, Boxes } from "lucide-react";
+import { Search, Image, Zap, Tags, Boxes, Bot } from "lucide-react";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
@@ -31,6 +31,11 @@ export function ServicesOverview() {
       icon: Boxes,
       title: t(translations.services.prototyping.title, language),
       description: t(translations.services.prototyping.description, language),
+    },
+    {
+      icon: Bot,
+      title: t(translations.services.agenticWorkflows.title, language),
+      description: t(translations.services.agenticWorkflows.description, language),
     },
   ];
 
