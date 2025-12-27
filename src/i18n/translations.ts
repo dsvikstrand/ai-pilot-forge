@@ -5,6 +5,7 @@ export const translations = {
   nav: {
     home: { sv: "Hem", en: "Home" },
     services: { sv: "Tjänster", en: "Services" },
+    agenticWorkflows: { sv: "Agentiska flöden", en: "Agentic Workflows" },
     pilots: { sv: "AI-Piloter", en: "AI Pilots" },
     about: { sv: "Om oss", en: "About" },
     contact: { sv: "Kontakt", en: "Contact" },

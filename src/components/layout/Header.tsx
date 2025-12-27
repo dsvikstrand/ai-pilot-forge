@@ -14,6 +14,7 @@ export function Header() {
   const navLinks = [
     { href: "/", label: t(translations.nav.home, language) },
     { href: "/services", label: t(translations.nav.services, language) },
+    { href: "/agentic-workflows", label: t(translations.nav.agenticWorkflows, language) },
     { href: "/pilots", label: t(translations.nav.pilots, language) },
     { href: "/about", label: t(translations.nav.about, language) },
     { href: "/contact", label: t(translations.nav.contact, language) },
