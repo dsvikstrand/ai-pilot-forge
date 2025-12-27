@@ -290,6 +290,132 @@ export const translations = {
       },
     },
   },
+
+  // Agentic Section (Homepage)
+  agenticSection: {
+    badge: { sv: "Nytt erbjudande", en: "New Service" },
+    title: { sv: "Agentiska AI-arbetsflöden", en: "Agentic AI Workflows" },
+    subtitle: { sv: "Lås upp nya nivåer av automatisering med AI-agenter som självständigt utför komplexa flerstegsuppgifter—med inbyggda säkerhetsmekanismer och mänsklig kontroll.", en: "Unlock new levels of automation with AI agents that autonomously execute complex multi-step tasks—with built-in guardrails and human oversight." },
+    cta: { sv: "Läs mer", en: "Learn more" },
+    features: {
+      multiStep: {
+        title: { sv: "Flerstegsautomatisering", en: "Multi-step automation" },
+        description: { sv: "Agenter som planerar, utför och itererar över komplexa uppgifter utan konstant övervakning.", en: "Agents that plan, execute, and iterate over complex tasks without constant supervision." },
+      },
+      guardrails: {
+        title: { sv: "Inbyggda säkerhetsmekanismer", en: "Built-in guardrails" },
+        description: { sv: "Mänsklig kontroll vid kritiska beslut för att säkerställa kvalitet och efterlevnad.", en: "Human-in-the-loop at critical decisions to ensure quality and compliance." },
+      },
+      scalable: {
+        title: { sv: "Skalbar arkitektur", en: "Scalable architecture" },
+        description: { sv: "Från en enskild uppgift till tusentals parallella körningar.", en: "From a single task to thousands of parallel executions." },
+      },
+    },
+    visual: {
+      title: { sv: "AI-agent", en: "AI Agent" },
+      subtitle: { sv: "Arbetar autonomt", en: "Working autonomously" },
+      steps: {
+        receive: { sv: "Ta emot uppgift", en: "Receive task" },
+        analyze: { sv: "Analysera & planera", en: "Analyze & plan" },
+        execute: { sv: "Utför åtgärder", en: "Execute actions" },
+        verify: { sv: "Verifiera & rapportera", en: "Verify & report" },
+      },
+    },
+  },
+
+  // Agentic Page
+  agenticPage: {
+    badge: { sv: "Agentiska arbetsflöden", en: "Agentic Workflows" },
+    title: { sv: "AI-agenter som arbetar för dig", en: "AI Agents That Work For You" },
+    subtitle: { sv: "Automatisera komplexa, flerstegsuppgifter med intelligenta AI-agenter som planerar, utför och lär sig—med dig i kontroll.", en: "Automate complex, multi-step tasks with intelligent AI agents that plan, execute, and learn—with you in control." },
+    cta: { sv: "Diskutera ditt projekt", en: "Discuss your project" },
+    ctaSecondary: { sv: "Se våra piloter", en: "View our pilots" },
+
+    what: {
+      title: { sv: "Vad är agentiska arbetsflöden?", en: "What Are Agentic Workflows?" },
+      description: { sv: "Till skillnad från traditionella chatbots som svarar på enstaka frågor, är agentiska AI-system designade för att självständigt utföra komplexa uppgifter över flera steg. De kan samla information, fatta beslut, använda verktyg och anpassa sin approach baserat på resultat—allt medan de håller människor informerade vid kritiska punkter.", en: "Unlike traditional chatbots that respond to single queries, agentic AI systems are designed to autonomously complete complex tasks across multiple steps. They can gather information, make decisions, use tools, and adapt their approach based on results—all while keeping humans informed at critical points." },
+    },
+
+    principles: {
+      orchestration: {
+        title: { sv: "Intelligent orkestrering", en: "Intelligent Orchestration" },
+        description: { sv: "Agenter bryter ner komplexa mål i hanterbara steg och koordinerar verktyg och datakällor för att uppnå resultat.", en: "Agents break down complex goals into manageable steps, coordinating tools and data sources to achieve outcomes." },
+      },
+      guardrails: {
+        title: { sv: "Säkerhetsmekanismer", en: "Safety Guardrails" },
+        description: { sv: "Inbyggda kontroller säkerställer att agenter arbetar inom definierade gränser med mänsklig översyn vid kritiska beslut.", en: "Built-in controls ensure agents operate within defined boundaries with human oversight at critical decisions." },
+      },
+      transparency: {
+        title: { sv: "Full transparens", en: "Full Transparency" },
+        description: { sv: "Detaljerade loggar och förklaringar av agentens resonemang så du alltid vet vad som händer och varför.", en: "Detailed logs and explanations of agent reasoning so you always know what's happening and why." },
+      },
+    },
+
+    benefitsSection: {
+      title: { sv: "Fördelar för SMF", en: "Benefits for SMEs" },
+      subtitle: { sv: "Agentiska arbetsflöden ger små och medelstora företag tillgång till automatiseringsnivåer som tidigare var reserverade för storföretag.", en: "Agentic workflows give small and medium enterprises access to automation levels previously reserved for large corporations." },
+    },
+
+    benefits: {
+      time: {
+        title: { sv: "Spara tid", en: "Save Time" },
+        description: { sv: "Automatisera timmar av manuellt arbete till minuter.", en: "Automate hours of manual work into minutes." },
+      },
+      accuracy: {
+        title: { sv: "Ökad precision", en: "Higher Accuracy" },
+        description: { sv: "Minska mänskliga fel i repetitiva uppgifter.", en: "Reduce human errors in repetitive tasks." },
+      },
+      scalability: {
+        title: { sv: "Skalbarhet", en: "Scalability" },
+        description: { sv: "Hantera ökande volymer utan proportionell kostnad.", en: "Handle increasing volumes without proportional cost." },
+      },
+      control: {
+        title: { sv: "Du behåller kontrollen", en: "You Stay in Control" },
+        description: { sv: "Mänsklig översyn vid alla viktiga beslutspunkter.", en: "Human oversight at all critical decision points." },
+      },
+    },
+
+    useCasesSection: {
+      title: { sv: "Användningsområden", en: "Use Cases" },
+      subtitle: { sv: "Praktiska tillämpningar av agentiska arbetsflöden för svenska SMF.", en: "Practical applications of agentic workflows for Swedish SMEs." },
+    },
+
+    useCases: {
+      research: {
+        title: { sv: "Research & analys", en: "Research & Analysis" },
+        description: { sv: "Låt agenter samla, syntetisera och rapportera information från flera källor.", en: "Let agents gather, synthesize, and report information from multiple sources." },
+        examples: [
+          { sv: "Konkurrentbevakning och marknadsanalys", en: "Competitor monitoring and market analysis" },
+          { sv: "Automatiserad due diligence", en: "Automated due diligence" },
+          { sv: "Trendanalys och rapportgenerering", en: "Trend analysis and report generation" },
+        ],
+      },
+      customer: {
+        title: { sv: "Kundservice & support", en: "Customer Service & Support" },
+        description: { sv: "Agenter som hanterar kundärenden från start till slut med eskalering vid behov.", en: "Agents that handle customer cases from start to finish with escalation when needed." },
+        examples: [
+          { sv: "Automatisk ärendehantering och routing", en: "Automatic case handling and routing" },
+          { sv: "Proaktiv kundkommunikation", en: "Proactive customer communication" },
+          { sv: "Komplex frågebesvarande med kontextförståelse", en: "Complex Q&A with context understanding" },
+        ],
+      },
+      operations: {
+        title: { sv: "Operationell automatisering", en: "Operational Automation" },
+        description: { sv: "Effektivisera interna processer med agenter som koordinerar mellan system.", en: "Streamline internal processes with agents that coordinate across systems." },
+        examples: [
+          { sv: "Automatiserad orderhantering", en: "Automated order processing" },
+          { sv: "Datamigration och kvalitetskontroll", en: "Data migration and quality control" },
+          { sv: "Rapportgenerering och distribution", en: "Report generation and distribution" },
+        ],
+      },
+    },
+
+    process: {
+      title: { sv: "Redo att utforska?", en: "Ready to Explore?" },
+      description: { sv: "Vi hjälper dig identifiera rätt användningsfall, bygga en pilot och mäta resultaten—innan du investerar i full skala.", en: "We help you identify the right use case, build a pilot, and measure results—before you invest at full scale." },
+      cta: { sv: "Boka ett samtal", en: "Book a call" },
+    },
+  },
 } as const;
 
 export function t(value: { sv: string; en: string }, lang: Language): string {
