@@ -1,8 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { ContactCTA } from "@/components/sections/ContactCTA";
-import { AgenticWorkflowsSection } from "@/components/sections/AgenticWorkflowsSection";
-import { Search, Image, Zap, Tags, Boxes, FileCode, Bot, CheckCircle2 } from "lucide-react";
+import { Search, Image, Zap, Tags, Boxes, FileCode, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray } from "@/i18n/translations";
 
@@ -16,7 +15,6 @@ const Services = () => {
     { icon: Tags, title: t(translations.services.autoTagging.title, language), description: t(translations.services.autoTagging.descriptionLong, language) },
     { icon: Boxes, title: t(translations.services.prototyping.title, language), description: t(translations.services.prototyping.descriptionLong, language) },
     { icon: FileCode, title: t(translations.services.deployment.title, language), description: t(translations.services.deployment.descriptionLong, language) },
-    { icon: Bot, title: t(translations.services.agenticWorkflows.title, language), description: t(translations.services.agenticWorkflows.descriptionLong, language) },
   ];
 
   const deliverables = tArray(translations.servicesPage.deliverables.items, language);
@@ -40,10 +38,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-      
-      {/* Dedicated Agentic Workflows Section */}
-      <AgenticWorkflowsSection />
-      
       <section className="bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl">
