@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import AgenticWorkflows from "./pages/AgenticWorkflows";
+import CustomAI from "./pages/CustomAI";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/custom-ai" element={<CustomAI />} />
             <Route path="/pilots" element={<Pilots />} />
             <Route path="/agentic-workflows" element={<AgenticWorkflows />} />
             <Route path="/about" element={<About />} />
