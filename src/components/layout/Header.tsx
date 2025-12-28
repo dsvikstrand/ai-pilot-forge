@@ -6,6 +6,8 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import vdsLogo from "@/assets/vds-logo.jpg";
 
+const customAINav = { sv: "Skräddarsydd AI", en: "Custom AI" };
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -14,6 +16,7 @@ export function Header() {
   const navLinks = [
     { href: "/", label: t(translations.nav.home, language) },
     { href: "/services", label: t(translations.nav.services, language) },
+    { href: "/custom-ai", label: t(customAINav, language) },
     { href: "/agentic-workflows", label: t(translations.nav.agenticWorkflows, language) },
     { href: "/pilots", label: t(translations.nav.pilots, language) },
     { href: "/about", label: t(translations.nav.about, language) },

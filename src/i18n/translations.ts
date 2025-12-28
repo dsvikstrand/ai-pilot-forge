@@ -417,6 +417,278 @@ export const translations = {
       cta: { sv: "Boka ett samtal", en: "Book a call" },
     },
   },
+
+  // Custom AI Page
+  customAIPage: {
+    hero: {
+      badge: { sv: "Skräddarsydd AI", en: "Custom AI Solutions" },
+      title: { sv: "Skräddarsydd AI som faktiskt passar ditt företag", en: "Custom AI that actually fits your business" },
+      subtitle: { sv: "Har du bra data? Då kan vi bygga en pålitlig modell som slår generiska verktyg på de mätvärden som betyder något för dig.", en: "If you have good data, we can build a reliable model that beats generic tools on the metrics you care about." },
+      ctaPrimary: { sv: "Boka en 20-min fit-check", en: "Book a 20-min fit check" },
+      ctaSecondary: { sv: "Se hur det fungerar", en: "See how it works" },
+      chips: [
+        { sv: "Anpassade mätvärden", en: "Custom metrics" },
+        { sv: "Snabb GPU-iteration", en: "Fast GPU iteration" },
+        { sv: "Inspekterbarhet & säkerhet", en: "Inspectability & guardrails" },
+      ],
+    },
+
+    problem: {
+      title: { sv: "Varför generiska verktyg misslyckas", en: "Why generic tools fail" },
+      subtitle: { sv: "SaaS-lösningar som fungerar för alla fungerar sällan optimalt för någon.", en: "SaaS solutions built for everyone rarely work optimally for anyone." },
+      items: {
+        average: {
+          title: { sv: "Optimerade för genomsnittet", en: "Optimized for average" },
+          description: { sv: "Generiska verktyg optimerar för den genomsnittliga användaren, inte dina specifika edge-cases.", en: "Generic tools optimize for the average user, not your specific edge cases." },
+        },
+        definitions: {
+          title: { sv: "Fel definition av 'bra'", en: "Wrong definition of 'good'" },
+          description: { sv: "De matchar sällan dina definitioner av kvalitet, feltolerans eller latenskrav.", en: "They rarely match your definitions of quality thresholds, error tolerance, or latency needs." },
+        },
+        inspect: {
+          title: { sv: "Svårt att inspektera", en: "Hard to inspect" },
+          description: { sv: "Du kan inte enkelt inspektera eller finjustera deras misslyckanden.", en: "You can't easily inspect or tune their failure cases." },
+        },
+        integrate: {
+          title: { sv: "Integrationsfriktioner", en: "Integration friction" },
+          description: { sv: "Generiska API:er passar sällan sömlöst in i dina befintliga system.", en: "Generic APIs rarely fit seamlessly into your existing systems." },
+        },
+      },
+    },
+
+    pipeline: {
+      title: { sv: "Den praktiska pipelinen", en: "The practical pipeline" },
+      subtitle: { sv: "Från idé till driftsatt modell—en transparent process anpassad för SMF.", en: "From idea to deployed model—a transparent process tailored for SMEs." },
+      steps: {
+        define: {
+          title: { sv: "Definiera beslutet", en: "Define the decision" },
+          description: { sv: "Vad ska AI:n stödja? Vad ska den inte göra?", en: "What should the AI support? What should it not do?" },
+        },
+        audit: {
+          title: { sv: "Data-audit & märkning", en: "Data audit & labeling" },
+          description: { sv: "Utvärdera datakvalitet och definiera märkningsstrategi.", en: "Evaluate data quality and define labeling strategy." },
+        },
+        baseline: {
+          title: { sv: "Baslinje + regler", en: "Baseline + rules" },
+          description: { sv: "Sätt upp 'kan inte avgöra'-regler och säkerhetsmekanismer.", en: "Set up 'cannot determine' rules and guardrails." },
+          note: { sv: "Vi stoppar när input är opålitlig.", en: "We stop when input is unreliable." },
+        },
+        train: {
+          title: { sv: "Träna & validera", en: "Train & validate" },
+          description: { sv: "Träna med anpassade mätvärden som speglar verkliga mål.", en: "Train with custom metrics that reflect real-world goals." },
+        },
+        analyze: {
+          title: { sv: "Felanalys", en: "Error analysis" },
+          description: { sv: "Djupdyk i edge-cases och misslyckanden.", en: "Deep dive into edge cases and failures." },
+        },
+        integrate: {
+          title: { sv: "Integrera", en: "Integrate" },
+          description: { sv: "Bygg in i ditt produkt eller arbetsflöde.", en: "Build into your product or workflow." },
+        },
+        monitor: {
+          title: { sv: "Övervaka & iterera", en: "Monitor & iterate" },
+          description: { sv: "Kontinuerlig förbättring baserad på verklig användning.", en: "Continuous improvement based on real usage." },
+        },
+      },
+    },
+
+    training: {
+      title: { sv: "Vad betyder 'träna en modell'?", en: "What does 'training a model' mean?" },
+      subtitle: { sv: "Ingen matematik—bara en enkel förklaring.", en: "No math—just a simple explanation." },
+      steps: {
+        examples: { sv: "Vi visar exempel", en: "We show examples" },
+        patterns: { sv: "Modellen lär sig mönster", en: "The model learns patterns" },
+        test: { sv: "Vi testar på nya fall", en: "We test on new cases" },
+        iterate: { sv: "Vi upprepar tills målet nås", en: "We repeat until target is met" },
+      },
+      analogy: { sv: "Tänk dig en ny medarbetare som lär sig av exempel, testar sina bedömningar, och gradvis blir bättre—med tydliga riktlinjer för när de ska be om hjälp.", en: "Think of it like a new employee learning from examples, testing their judgment, and gradually improving—with clear guidelines for when to ask for help." },
+    },
+
+    comparison: {
+      title: { sv: "Varför anpassad AI kan vinna", en: "Why custom AI can win" },
+      subtitle: { sv: "När du har bra data, slår skräddarsydda lösningar generiska verktyg.", en: "When you have good data, custom solutions beat generic tools." },
+      headers: {
+        aspect: { sv: "Aspekt", en: "Aspect" },
+        generic: { sv: "Generiskt verktyg", en: "Generic tool" },
+        custom: { sv: "Anpassad modell", en: "Custom model" },
+      },
+      rows: {
+        metrics: {
+          aspect: { sv: "Benchmarks", en: "Benchmarks" },
+          generic: { sv: "Generisk 'accuracy'", en: "Generic 'accuracy'" },
+          custom: { sv: "Speglar din verklighet", en: "Reflects your reality" },
+        },
+        thresholds: {
+          aspect: { sv: "Felhantering", en: "Error handling" },
+          generic: { sv: "En storlek för alla", en: "One size fits all" },
+          custom: { sv: "Kostnadskänslig precision/recall", en: "Cost-sensitive precision/recall" },
+        },
+        constraints: {
+          aspect: { sv: "Affärsregler", en: "Business rules" },
+          generic: { sv: "Inte stöd", en: "Not supported" },
+          custom: { sv: "Inbyggda domänbegränsningar", en: "Built-in domain constraints" },
+        },
+        integration: {
+          aspect: { sv: "Integration", en: "Integration" },
+          generic: { sv: "Anpassa dig", en: "Adapt to it" },
+          custom: { sv: "Anpassar sig till dig", en: "Adapts to you" },
+        },
+        privacy: {
+          aspect: { sv: "Datasäkerhet", en: "Data privacy" },
+          generic: { sv: "Deras villkor", en: "Their terms" },
+          custom: { sv: "Full kontroll", en: "Full control" },
+        },
+        cannotDetermine: {
+          aspect: { sv: "'Kan inte avgöra'", en: "'Cannot determine'" },
+          generic: { sv: "Sällan stöd", en: "Rarely supported" },
+          custom: { sv: "Inbyggd konfidenströskel", en: "Built-in confidence threshold" },
+        },
+      },
+    },
+
+    value: {
+      title: { sv: "Affärsvärde: mätbara resultat", en: "Business value: measurable outcomes" },
+      subtitle: { sv: "Konkreta fördelar när AI faktiskt fungerar.", en: "Concrete benefits when AI actually works." },
+      outcomes: {
+        time: {
+          title: { sv: "Minskad manuell granskning", en: "Reduced manual review" },
+          description: { sv: "Automatisera timmar av manuellt arbete till minuter.", en: "Automate hours of manual work into minutes." },
+        },
+        decisions: {
+          title: { sv: "Snabbare beslutscykler", en: "Faster decision cycles" },
+          description: { sv: "Få svar på sekunder istället för dagar.", en: "Get answers in seconds instead of days." },
+        },
+        errors: {
+          title: { sv: "Färre kostsamma misstag", en: "Fewer costly mistakes" },
+          description: { sv: "Minska false positives och negatives som kostar pengar.", en: "Reduce false positives and negatives that cost money." },
+        },
+        consistency: {
+          title: { sv: "Förbättrad konsekvens", en: "Improved consistency" },
+          description: { sv: "Samma kvalitet varje gång, med full spårbarhet.", en: "Same quality every time, with full auditability." },
+        },
+        experience: {
+          title: { sv: "Bättre kundupplevelse", en: "Better customer experience" },
+          description: { sv: "Snabbare och mer tillförlitliga svar till kunder.", en: "Faster and more reliable responses to customers." },
+        },
+        cost: {
+          title: { sv: "Lägre driftskostnad", en: "Lower operating cost" },
+          description: { sv: "Skala utan proportionell personalökning.", en: "Scale without proportional headcount increase." },
+        },
+      },
+      disclaimer: { sv: "Resultat beror på datakvalitet och operationell passform.", en: "Outcomes depend on data quality and operational fit." },
+    },
+
+    useCases: {
+      title: { sv: "Realistiska användningsfall", en: "Realistic use cases" },
+      subtitle: { sv: "Konkreta exempel på hur SMF kan använda anpassad AI.", en: "Concrete examples of how SMEs can use custom AI." },
+      labels: {
+        input: { sv: "Input", en: "Input" },
+        output: { sv: "Output", en: "Output" },
+        impact: { sv: "Affärspåverkan", en: "Business impact" },
+      },
+      cases: {
+        visual: {
+          title: { sv: "Visuell inspektion", en: "Visual inspection" },
+          input: { sv: "Produktbilder från tillverkningslinje", en: "Product images from manufacturing line" },
+          output: { sv: "OK / Defekt / Kräver manuell granskning", en: "OK / Defect / Requires manual review" },
+          impact: { sv: "70% mindre manuell granskningstid", en: "70% less manual review time" },
+        },
+        document: {
+          title: { sv: "Dokumentklassificering", en: "Document classification" },
+          input: { sv: "Inkommande dokument (PDF, e-post)", en: "Incoming documents (PDF, email)" },
+          output: { sv: "Kategori + routing till rätt team", en: "Category + routing to right team" },
+          impact: { sv: "80% snabbare ärendehantering", en: "80% faster case handling" },
+        },
+        prediction: {
+          title: { sv: "Efterfråge-/riskprediktion", en: "Demand/risk prediction" },
+          input: { sv: "Historisk data + externa signaler", en: "Historical data + external signals" },
+          output: { sv: "Sannolikhetsberäkning + konfidensintervall", en: "Probability score + confidence interval" },
+          impact: { sv: "20% bättre lageroptimering", en: "20% better inventory optimization" },
+        },
+      },
+    },
+
+    tiers: {
+      title: { sv: "Välj ditt nästa steg", en: "Choose your next step" },
+      subtitle: { sv: "Transparenta leverabler i varje steg.", en: "Transparent deliverables at every stage." },
+      popular: { sv: "Populär", en: "Popular" },
+      deliverablesLabel: { sv: "Leverabler:", en: "Deliverables:" },
+      fitCheck: {
+        title: { sv: "Fit Check", en: "Fit Check" },
+        duration: { sv: "1–2 veckor", en: "1–2 weeks" },
+        price: { sv: "från 25 000 kr", en: "from 25,000 SEK" },
+        description: { sv: "Snabb bedömning av om dina data och mål passar för anpassad AI.", en: "Quick assessment of whether your data and goals fit custom AI." },
+        deliverables: [
+          { sv: "Data-audit", en: "Data audit" },
+          { sv: "Baslinjemätning", en: "Baseline measurement" },
+          { sv: "Framgångsmått definierade", en: "Success metrics defined" },
+          { sv: "Go/no-go rekommendation", en: "Go/no-go recommendation" },
+          { sv: "Liten demo om möjligt", en: "Small demo if feasible" },
+        ],
+        cta: { sv: "Starta Fit Check", en: "Start Fit Check" },
+      },
+      pilot: {
+        title: { sv: "Pilot", en: "Pilot" },
+        duration: { sv: "4–6 veckor", en: "4–6 weeks" },
+        price: { sv: "från 75 000 kr", en: "from 75,000 SEK" },
+        description: { sv: "Bygg och utvärdera en riktig modell med anpassade mätvärden.", en: "Build and evaluate a real model with custom metrics." },
+        deliverables: [
+          { sv: "Tränad modell", en: "Trained model" },
+          { sv: "Utvärderingsrapport med anpassade mätvärden", en: "Evaluation report with custom metrics" },
+          { sv: "Felanalys", en: "Error analysis" },
+          { sv: "Enkel integrationsplan", en: "Simple integration plan" },
+          { sv: "Driftsättningsvägledning", en: "Deployment guidance" },
+        ],
+        cta: { sv: "Boka Pilot-samtal", en: "Book Pilot Call" },
+      },
+      production: {
+        title: { sv: "Produktion", en: "Production" },
+        duration: { sv: "8–12+ veckor", en: "8–12+ weeks" },
+        price: { sv: "kontakta oss", en: "contact us" },
+        description: { sv: "Produktionsklar modell med övervakning, iteration och överlämning.", en: "Production-ready model with monitoring, iteration, and handover." },
+        deliverables: [
+          { sv: "Produktionsklar modell", en: "Production-ready model" },
+          { sv: "Övervakningsplan", en: "Monitoring plan" },
+          { sv: "Iterationsloop", en: "Iteration loop" },
+          { sv: "Integrationsstöd", en: "Integration support" },
+          { sv: "Dokumentation & utbildning", en: "Documentation & training" },
+        ],
+        cta: { sv: "Kontakta VDS", en: "Talk to VDS" },
+      },
+    },
+
+    faq: {
+      title: { sv: "Vanliga frågor", en: "Frequently asked questions" },
+      items: [
+        {
+          question: { sv: "Vad räknas som 'bra data'?", en: "What counts as 'good data'?" },
+          answer: { sv: "Bra data är representativ för ditt verkliga användningsfall, har tillräcklig volym för mönsterigenkänning, och har konsekventa etiketter eller utfall. Vi hjälper dig utvärdera detta i Fit Check.", en: "Good data is representative of your real use case, has sufficient volume for pattern recognition, and has consistent labels or outcomes. We help you evaluate this in the Fit Check." },
+        },
+        {
+          question: { sv: "Hur mycket data behöver vi?", en: "How much data do we need?" },
+          answer: { sv: "Det beror på komplexiteten. För vissa uppgifter räcker hundratals exempel, för andra krävs tusentals. Vi ger dig ett ärligt svar under Fit Check.", en: "It depends on complexity. For some tasks, hundreds of examples suffice; for others, thousands are needed. We give you an honest answer during Fit Check." },
+        },
+        {
+          question: { sv: "Kan ni börja regelbaserat och utveckla till ML?", en: "Can you start rule-based and evolve to ML?" },
+          answer: { sv: "Absolut. Ofta är en hybrid approach bäst—regelbaserat för tydliga fall, ML för gråzoner. Detta ger pålitlighet från dag ett.", en: "Absolutely. Often a hybrid approach is best—rule-based for clear cases, ML for gray zones. This provides reliability from day one." },
+        },
+        {
+          question: { sv: "Hur hanterar ni 'kan inte avgöra'-fall?", en: "How do you handle 'cannot determine' cases?" },
+          answer: { sv: "Vi bygger in konfidenströsklar och 'osäker'-output från början. Modellen lär sig när den ska flagga för mänsklig granskning istället för att gissa.", en: "We build in confidence thresholds and 'uncertain' outputs from the start. The model learns when to flag for human review instead of guessing." },
+        },
+        {
+          question: { sv: "Fungerar detta med våra integritetskrav?", en: "Will this work with our privacy constraints?" },
+          answer: { sv: "Ja. Vi kan arbeta på er infrastruktur, använda anonymiserade data, och anpassa oss efter GDPR och era interna policyer.", en: "Yes. We can work on your infrastructure, use anonymized data, and adapt to GDPR and your internal policies." },
+        },
+      ],
+    },
+
+    finalCta: {
+      title: { sv: "Redo att utforska?", en: "Ready to explore?" },
+      subtitle: { sv: "Boka en 20-minuters fit-check för att se om anpassad AI passar ditt företag.", en: "Book a 20-minute fit check to see if custom AI fits your business." },
+      cta: { sv: "Boka samtal", en: "Book a call" },
+    },
+  },
 } as const;
 
 export function t(value: { sv: string; en: string }, lang: Language): string {
