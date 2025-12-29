@@ -24,7 +24,7 @@ const Contact = () => {
               <div className="flex flex-col items-center rounded-xl border border-border bg-card p-8 text-center shadow-soft">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary"><Mail className="h-6 w-6" /></div>
                 <h3 className="mb-2 font-semibold">{t(translations.contactPage.email, language)}</h3>
-                <a href="mailto:hello@vds.se" className="text-sm text-muted-foreground transition-colors hover:text-accent">hello@vds.se</a>
+                <a href="mailto:david@vdsai.se" className="text-sm text-muted-foreground transition-colors hover:text-accent">david@vdsai.se</a>
               </div>
               <div className="flex flex-col items-center rounded-xl border border-border bg-card p-8 text-center shadow-soft">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary"><MapPin className="h-6 w-6" /></div>
@@ -36,7 +36,7 @@ const Contact = () => {
                 <h3 className="mb-2 font-semibold">{t(translations.contactPage.connect, language)}</h3>
                 <div className="flex gap-4">
                   <a href="https://github.com/V1kstrand" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-accent" aria-label="GitHub"><Github className="h-5 w-5" /></a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-accent" aria-label="LinkedIn"><Linkedin className="h-5 w-5" /></a>
+                  <a href="https://www.linkedin.com/in/david-vikstrand/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-accent" aria-label="LinkedIn"><Linkedin className="h-5 w-5" /></a>
                 </div>
               </div>
             </div>
