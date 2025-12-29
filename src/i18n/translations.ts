@@ -683,10 +683,104 @@ export const translations = {
       ],
     },
 
+    readinessTest: {
+      badge: { sv: "Gratis test", en: "Free Assessment" },
+      title: { sv: "Osäker på var ni står?", en: "Unsure where you stand?" },
+      subtitle: { sv: "Ta vårt 3-minuters AI-beredskapstest för att få en personlig bedömning och konkreta rekommendationer.", en: "Take our 3-minute AI readiness test to get a personalized assessment and concrete recommendations." },
+      cta: { sv: "Ta testet nu", en: "Take the test now" },
+    },
+
     finalCta: {
       title: { sv: "Redo att utforska?", en: "Ready to explore?" },
       subtitle: { sv: "Boka en 20-minuters fit-check för att se om anpassad AI passar ditt företag.", en: "Book a 20-minute fit check to see if custom AI fits your business." },
       cta: { sv: "Boka samtal", en: "Book a call" },
+    },
+  },
+
+  // AI Readiness Test Page
+  aiReadinessTest: {
+    hero: {
+      badge: { sv: "AI-beredskapstest", en: "AI Readiness Check" },
+      title: { sv: "Är ditt företag redo för AI?", en: "Is your business ready for AI?" },
+      subtitle: { sv: "Svara på 12 frågor och få en personlig bedömning av er AI-mognad – plus konkreta rekommendationer för nästa steg.", en: "Answer 12 questions and get a personalized assessment of your AI maturity – plus concrete recommendations for next steps." },
+      timeEstimate: { sv: "3 minuter", en: "3 minutes" },
+      questionsCount: { sv: "12 frågor", en: "12 questions" },
+      instantResults: { sv: "Omedelbart resultat", en: "Instant results" },
+    },
+    start: {
+      title: { sv: "Starta testet", en: "Start the test" },
+      description: { sv: "Testet utvärderar fyra nyckelområden som avgör hur redo ert företag är att dra nytta av skräddarsydd AI.", en: "The test evaluates four key areas that determine how ready your company is to benefit from custom AI." },
+      categories: [
+        { sv: "Datatillgänglighet och kvalitet", en: "Data availability and quality" },
+        { sv: "Processklarhet och dokumentation", en: "Process clarity and documentation" },
+        { sv: "Teknisk infrastruktur", en: "Technical infrastructure" },
+        { sv: "Organisatorisk beredskap", en: "Organizational readiness" },
+      ] as const,
+      cta: { sv: "Börja testet", en: "Begin the test" },
+    },
+    test: {
+      question: { sv: "Fråga", en: "Question" },
+      category: { sv: "Kategori", en: "Category" },
+      previous: { sv: "Föregående", en: "Previous" },
+      next: { sv: "Nästa", en: "Next" },
+      seeResults: { sv: "Se resultat", en: "See results" },
+    },
+    categories: {
+      data: { sv: "Data", en: "Data" },
+      process: { sv: "Process", en: "Process" },
+      technical: { sv: "Teknisk", en: "Technical" },
+      organizational: { sv: "Organisation", en: "Organizational" },
+    },
+    results: {
+      areasToImprove: { sv: "Områden att förbättra:", en: "Areas to improve:" },
+      recommendations: {
+        title: { sv: "Rekommenderade nästa steg:", en: "Recommended next steps:" },
+      },
+      restart: { sv: "Ta testet igen", en: "Take the test again" },
+      learnMore: { sv: "Vill du veta mer om hur skräddarsydd AI kan passa ditt företag?", en: "Want to learn more about how custom AI can fit your business?" },
+      learnMoreCta: { sv: "Läs mer om Custom AI", en: "Read more about Custom AI" },
+      categories: {
+        aiReady: {
+          title: { sv: "AI-redo", en: "AI Ready" },
+          description: { sv: "Ert företag har starka förutsättningar för att dra nytta av skräddarsydd AI. Ni har data, processer och organisation på plats för att börja omedelbart.", en: "Your company has strong prerequisites to benefit from custom AI. You have data, processes, and organization in place to start immediately." },
+          recommendations: [
+            { sv: "Identifiera 2-3 högvärdiga användningsfall att prioritera", en: "Identify 2-3 high-value use cases to prioritize" },
+            { sv: "Börja med en pilot för att validera ROI", en: "Start with a pilot to validate ROI" },
+            { sv: "Planera för skalning efter lyckad pilot", en: "Plan for scaling after successful pilot" },
+          ] as const,
+          cta: { sv: "Boka ett samtal om pilotprojekt", en: "Book a call about pilot projects" },
+        },
+        promising: {
+          title: { sv: "Lovande grund", en: "Promising Foundation" },
+          description: { sv: "Ni har en god bas att bygga på. Några förbättringsområden finns, men med rätt fokus kan ni snabbt bli AI-redo.", en: "You have a good foundation to build on. Some areas need improvement, but with the right focus you can quickly become AI-ready." },
+          recommendations: [
+            { sv: "Börja dokumentera era mest repetitiva processer", en: "Start documenting your most repetitive processes" },
+            { sv: "Samla historisk data i ett tillgängligt format", en: "Collect historical data in an accessible format" },
+            { sv: "Överväg en förstudie för att kartlägga möjligheter", en: "Consider a discovery phase to map opportunities" },
+          ] as const,
+          cta: { sv: "Boka en kostnadsfri förstudie", en: "Book a free discovery session" },
+        },
+        earlyStage: {
+          title: { sv: "Tidigt skede", en: "Early Stage" },
+          description: { sv: "Det finns förbättringspotential inom flera områden, men det betyder inte att AI är uteslutet. Börja med grundläggande förberedelser.", en: "There's improvement potential in several areas, but that doesn't rule out AI. Start with basic preparations." },
+          recommendations: [
+            { sv: "Prioritera att digitalisera och strukturera er data", en: "Prioritize digitizing and structuring your data" },
+            { sv: "Dokumentera era nyckelprocesser och flaskhalsar", en: "Document your key processes and bottlenecks" },
+            { sv: "Sätt upp grundläggande KPI:er för de områden ni vill förbättra", en: "Set up basic KPIs for the areas you want to improve" },
+          ] as const,
+          cta: { sv: "Få rådgivning om förberedelser", en: "Get advice on preparations" },
+        },
+        foundation: {
+          title: { sv: "Bygga grunden", en: "Foundation Building" },
+          description: { sv: "Just nu finns betydande förberedelser att göra innan AI blir aktuellt. Det positiva är att dessa förbättringar ger värde oavsett AI.", en: "Right now there are significant preparations to make before AI becomes relevant. The positive is that these improvements add value regardless of AI." },
+          recommendations: [
+            { sv: "Fokusera på att digitalisera era mest kritiska processer", en: "Focus on digitizing your most critical processes" },
+            { sv: "Skapa system för att samla och spara data konsekvent", en: "Create systems for collecting and saving data consistently" },
+            { sv: "Bygg intern förståelse för varför data och dokumentation är viktigt", en: "Build internal understanding of why data and documentation matters" },
+          ] as const,
+          cta: { sv: "Prata med oss om digitaliseringsstrategi", en: "Talk to us about digitalization strategy" },
+        },
+      },
     },
   },
 } as const;
