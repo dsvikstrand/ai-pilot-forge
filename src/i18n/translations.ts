@@ -246,7 +246,7 @@ export const translations = {
     subtitle: { sv: "Redo att utforska vad AI kan göra för ditt företag? Låt oss ha ett samtal.", en: "Ready to explore what AI can do for your business? Let's have a conversation." },
     email: { sv: "E-post", en: "Email" },
     location: { sv: "Plats", en: "Location" },
-    locationValue: { sv: "Stockholm, Sverige", en: "Stockholm, Sweden" },
+    locationValue: { sv: "Göteborg, Sverige", en: "Gothenburg, Sweden" },
     connect: { sv: "Anslut", en: "Connect" },
   },
 
