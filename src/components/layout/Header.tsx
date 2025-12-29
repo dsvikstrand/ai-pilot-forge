@@ -7,6 +7,7 @@ import { translations, t } from "@/i18n/translations";
 import vdsLogo from "@/assets/vds-logo.jpg";
 
 const customAINav = { sv: "Skräddarsydd AI", en: "Custom AI" };
+const aiReadinessNav = { sv: "AI-beredskapstest", en: "AI Readiness Test" };
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -72,6 +73,9 @@ export function Header() {
               SV
             </button>
           </div>
+          <Button asChild variant="outline" size="sm">
+            <Link to="/ai-readiness-test">{t(aiReadinessNav, language)}</Link>
+          </Button>
           <Button asChild size="sm">
             <Link to="/contact">{t(translations.nav.bookCall, language)}</Link>
           </Button>
@@ -133,11 +137,18 @@ export function Header() {
                 SV
               </button>
             </div>
-            <Button asChild size="sm">
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                {t(translations.nav.bookCall, language)}
-              </Link>
-            </Button>
+            <div className="flex gap-2">
+              <Button asChild variant="outline" size="sm">
+                <Link to="/ai-readiness-test" onClick={() => setMobileMenuOpen(false)}>
+                  {t(aiReadinessNav, language)}
+                </Link>
+              </Button>
+              <Button asChild size="sm">
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  {t(translations.nav.bookCall, language)}
+                </Link>
+              </Button>
+            </div>
           </div>
         </nav>
       </div>
