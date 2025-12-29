@@ -73,7 +73,7 @@ export function Header() {
               SV
             </button>
           </div>
-          <Button asChild variant="outline" size="sm">
+          <Button asChild size="sm">
             <Link to="/ai-readiness-test">{t(aiReadinessNav, language)}</Link>
           </Button>
           <Button asChild size="sm">
@@ -138,7 +138,7 @@ export function Header() {
               </button>
             </div>
             <div className="flex gap-2">
-              <Button asChild variant="outline" size="sm">
+              <Button asChild size="sm">
                 <Link to="/ai-readiness-test" onClick={() => setMobileMenuOpen(false)}>
                   {t(aiReadinessNav, language)}
                 </Link>
