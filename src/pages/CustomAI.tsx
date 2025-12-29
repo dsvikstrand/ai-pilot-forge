@@ -87,7 +87,7 @@ export default function CustomAI() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
               >
                 <a href="#pipeline">
                   {t(tr.hero.ctaSecondary, language)}
@@ -448,6 +448,29 @@ export default function CustomAI() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI Readiness CTA */}
+      <section className="py-16 lg:py-20 bg-accent/10 border-y border-accent/20">
+        <div className="container mx-auto px-4 lg:px-8 text-center">
+          <div className="max-w-2xl mx-auto">
+            <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
+              {t(tr.readinessTest.badge, language)}
+            </Badge>
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl mb-4">
+              {t(tr.readinessTest.title, language)}
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              {t(tr.readinessTest.subtitle, language)}
+            </p>
+            <Button asChild size="lg">
+              <Link to="/ai-readiness-test">
+                {t(tr.readinessTest.cta, language)}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

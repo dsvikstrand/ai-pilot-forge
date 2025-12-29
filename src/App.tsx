@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import AgenticWorkflows from "./pages/AgenticWorkflows";
 import CustomAI from "./pages/CustomAI";
+import AIReadinessTest from "./pages/AIReadinessTest";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/custom-ai" element={<CustomAI />} />
             <Route path="/pilots" element={<Pilots />} />
             <Route path="/agentic-workflows" element={<AgenticWorkflows />} />
+            <Route path="/ai-readiness-test" element={<AIReadinessTest />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
