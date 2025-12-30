@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
-import Pilots from "./pages/Pilots";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
@@ -28,7 +27,6 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
             <Route path="/custom-ai" element={<CustomAI />} />
-            <Route path="/pilots" element={<Pilots />} />
             <Route path="/agentic-workflows" element={<AgenticWorkflows />} />
             <Route path="/ai-readiness-test" element={<AIReadinessTest />} />
             <Route path="/about" element={<About />} />
