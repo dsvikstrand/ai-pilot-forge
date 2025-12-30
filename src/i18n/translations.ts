@@ -418,10 +418,10 @@ export const translations = {
     },
   },
 
-  // Custom AI Page
   customAIPage: {
     hero: {
-      badge: { sv: "Skräddarsydd AI", en: "Custom AI Solutions" },
+      badge: { sv: "AI-Piloter för SMF", en: "AI Pilots for SMEs" },
+      pilotFraming: { sv: "Skräddarsydd AI — byggt som piloter", en: "Custom AI — built as pilots" },
       title: { sv: "Skräddarsydd AI som faktiskt passar ditt företag", en: "Custom AI that actually fits your business" },
       subtitle: { sv: "Har du bra data? Då kan vi bygga en pålitlig modell som slår generiska verktyg på de mätvärden som betyder något för dig.", en: "If you have good data, we can build a reliable model that beats generic tools on the metrics you care about." },
       ctaPrimary: { sv: "Boka en 20-min fit-check", en: "Book a 20-min fit check" },
@@ -609,10 +609,10 @@ export const translations = {
     },
 
     tiers: {
-      title: { sv: "Välj ditt nästa steg", en: "Choose your next step" },
-      subtitle: { sv: "Transparenta leverabler i varje steg.", en: "Transparent deliverables at every stage." },
+      badge: { sv: "AI-Piloter", en: "AI Pilots" },
+      title: { sv: "Välj din pilot", en: "Choose your pilot" },
+      subtitle: { sv: "Fokuserade uppdrag designade för att validera värde snabbt. Välj det format som passar dina behov.", en: "Focused engagements designed to validate value quickly. Choose the format that fits your needs." },
       popular: { sv: "Populär", en: "Popular" },
-      deliverablesLabel: { sv: "Leverabler:", en: "Deliverables:" },
       fitCheck: {
         title: { sv: "Fit Check", en: "Fit Check" },
         duration: { sv: "1–2 veckor", en: "1–2 weeks" },
@@ -679,6 +679,18 @@ export const translations = {
         {
           question: { sv: "Fungerar detta med våra integritetskrav?", en: "Will this work with our privacy constraints?" },
           answer: { sv: "Ja. Vi kan arbeta på er infrastruktur, använda anonymiserade data, och anpassa oss efter GDPR och era interna policyer.", en: "Yes. We can work on your infrastructure, use anonymized data, and adapt to GDPR and your internal policies." },
+        },
+        {
+          question: { sv: "Arbetar ni med känslig data?", en: "Do you work with sensitive data?" },
+          answer: { sv: "Ja. Vi kan arbeta med anonymiserade prover under tidig utforskning och signerar NDA för produktionsdata. Allt arbete kan göras på er infrastruktur om det krävs.", en: "Yes. We can work with sanitized samples during early exploration, and sign NDAs for production data. All work can be done on your infrastructure if required." },
+        },
+        {
+          question: { sv: "Levererar ni kod?", en: "Do you deliver code?" },
+          answer: { sv: "Ja. Varje uppdrag inkluderar ett rent repository med källkod, dokumentation och tydliga instruktioner. Ert team kan äga och vidareutveckla arbetet.", en: "Yes. Every engagement includes a clean repository with source code, documentation, and clear instructions. Your team can own and extend the work." },
+        },
+        {
+          question: { sv: "Hur hanterar ni scopeändringar under en pilot?", en: "How do you handle scope changes during a pilot?" },
+          answer: { sv: "Vi börjar med ett tydligt avgränsat mål, men förblir flexibla. Om vi upptäcker något viktigt mitt i piloten diskuterar vi alternativ och justerar planen tillsammans.", en: "We start with a clearly scoped goal, but we stay flexible. If we discover something important mid-pilot, we'll discuss options and adjust the plan together." },
         },
       ],
     },

@@ -11,7 +11,7 @@ export function Footer() {
     company: [
       { href: "/", label: t(translations.nav.home, language) },
       { href: "/services", label: t(translations.nav.services, language) },
-      { href: "/pilots", label: t(translations.nav.pilots, language) },
+      { href: "/custom-ai", label: t({ sv: "Skräddarsydd AI", en: "Custom AI" }, language) },
       { href: "/about", label: t(translations.nav.about, language) },
     ],
     legal: [

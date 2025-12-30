@@ -37,6 +37,7 @@ import {
   Gauge,
   Lock,
   Brain,
+  Check,
 } from "lucide-react";
 
 export default function CustomAI() {
@@ -69,6 +70,9 @@ export default function CustomAI() {
             >
               {t(tr.hero.badge, language)}
             </Badge>
+            <p className="text-sm text-primary-foreground/60 mb-4">
+              {t(tr.hero.pilotFraming, language)}
+            </p>
             <h1 className="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance mb-6">
               {t(tr.hero.title, language)}
             </h1>
@@ -475,13 +479,16 @@ export default function CustomAI() {
         </div>
       </section>
 
-      {/* Tiers Section */}
-      <section className="py-20 lg:py-28 bg-background">
+      {/* Tiers Section - AI Pilots */}
+      <section id="pilots" className="py-20 lg:py-28 bg-background">
         <div
           ref={tiersRef}
           className="container mx-auto px-4 lg:px-8 scroll-reveal"
         >
           <div className="text-center mb-12">
+            <Badge variant="secondary" className="mb-4">
+              {t(tr.tiers.badge, language)}
+            </Badge>
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-4">
               {t(tr.tiers.title, language)}
             </h2>
@@ -498,53 +505,49 @@ export default function CustomAI() {
             ].map((tier, index) => (
               <Card
                 key={index}
-                className={`relative border-border/50 shadow-soft ${
+                className={`group relative overflow-hidden border-border/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-medium ${
                   tier.featured
-                    ? "border-primary bg-primary/5 shadow-medium"
-                    : "bg-card"
+                    ? "border-accent shadow-glow ring-1 ring-accent/20"
+                    : "bg-card shadow-soft"
                 }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {tier.featured && (
-                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground">
+                  <div className="absolute right-4 top-4 animate-pulse rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
                     {t(tr.tiers.popular, language)}
-                  </Badge>
+                  </div>
                 )}
-                <CardHeader className="text-center pt-8">
-                  <CardTitle className="text-2xl">
+                <CardHeader className="pt-8">
+                  <CardTitle className="text-xl">
                     {t(tier.title, language)}
                   </CardTitle>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm font-medium text-accent">
                     {t(tier.duration, language)}
                   </p>
-                  <p className="text-3xl font-bold text-foreground mt-2">
+                  <p className="text-2xl font-bold text-foreground mt-2">
                     {t(tier.price, language)}
                   </p>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-sm text-muted-foreground text-center">
+                <CardContent className="space-y-6">
+                  <p className="text-sm text-muted-foreground">
                     {t(tier.description, language)}
                   </p>
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium text-foreground">
-                      {t(tr.tiers.deliverablesLabel, language)}
-                    </p>
-                    <ul className="space-y-2">
-                      {tArray(tier.deliverables, language).map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <CheckCheck className="h-4 w-4 text-accent mt-0.5 shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <ul className="space-y-3">
+                    {tArray(tier.deliverables, language).map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm">
+                        <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
+                        <span className="text-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <Button
                     asChild
-                    className="w-full mt-4"
+                    className="group/btn w-full"
                     variant={tier.featured ? "default" : "outline"}
                   >
                     <Link to="/contact">
                       {t(tier.cta, language)}
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </Link>
                   </Button>
                 </CardContent>
