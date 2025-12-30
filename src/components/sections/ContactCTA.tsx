@@ -5,6 +5,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import { Mail } from "lucide-react";
+
+// Set to true when database is ready
+const FORM_ENABLED = false;
 
 export function ContactCTA() {
   const { toast } = useToast();
@@ -45,56 +49,77 @@ export function ContactCTA() {
               {t(translations.contact.subtitle, language)}
             </p>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid gap-6 sm:grid-cols-2">
+          
+          {FORM_ENABLED ? (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid gap-6 sm:grid-cols-2">
+                <div>
+                  <Input
+                    placeholder={t(translations.contact.name, language)}
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
+                    className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-primary-foreground/40"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="email"
+                    placeholder={t(translations.contact.email, language)}
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    required
+                    className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-primary-foreground/40"
+                  />
+                </div>
+              </div>
               <div>
                 <Input
-                  placeholder={t(translations.contact.name, language)}
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
+                  placeholder={t(translations.contact.company, language)}
+                  value={formData.company}
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-primary-foreground/40"
                 />
               </div>
               <div>
-                <Input
-                  type="email"
-                  placeholder={t(translations.contact.email, language)}
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                <Textarea
+                  placeholder={t(translations.contact.message, language)}
+                  rows={5}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-primary-foreground/40"
                 />
               </div>
+              <Button
+                type="submit"
+                variant="hero"
+                size="lg"
+                className="w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? t(translations.contact.submitting, language) : t(translations.contact.submit, language)}
+              </Button>
+            </form>
+          ) : (
+            <div className="text-center">
+              <p className="mb-6 text-primary-foreground/80">
+                {language === "sv" 
+                  ? "Kontaktformuläret kommer snart! Under tiden, kontakta oss direkt:"
+                  : "Contact form coming soon! In the meantime, reach us directly:"}
+              </p>
+              <Button
+                asChild
+                variant="hero"
+                size="lg"
+              >
+                <a href="mailto:david@vdsai.se" className="inline-flex items-center gap-2">
+                  <Mail className="h-5 w-5" />
+                  david@vdsai.se
+                </a>
+              </Button>
             </div>
-            <div>
-              <Input
-                placeholder={t(translations.contact.company, language)}
-                value={formData.company}
-                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-primary-foreground/40"
-              />
-            </div>
-            <div>
-              <Textarea
-                placeholder={t(translations.contact.message, language)}
-                rows={5}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                required
-                className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-primary-foreground/40"
-              />
-            </div>
-            <Button
-              type="submit"
-              variant="hero"
-              size="lg"
-              className="w-full"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? t(translations.contact.submitting, language) : t(translations.contact.submit, language)}
-            </Button>
-          </form>
+          )}
         </div>
       </div>
     </section>
