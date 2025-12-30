@@ -167,7 +167,7 @@ export default function AgenticWorkflows() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/pilots">
+                <Link to="/custom-ai">
                   {t(translations.agenticPage.ctaSecondary, language)}
                 </Link>
               </Button>
