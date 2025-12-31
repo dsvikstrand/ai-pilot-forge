@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -12,6 +13,11 @@ const About = () => {
 
   return (
     <Layout>
+      <SEO
+        title="About VDS - Vikstrand Deep Solutions"
+        description="Learn about the founder of VDS and how we help Swedish SMEs implement GPU-powered AI solutions. From idea to working prototype."
+        canonical="https://vds.se/about"
+      />
       <section className="bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">

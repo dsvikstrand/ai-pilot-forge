@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray } from "@/i18n/translations";
 
@@ -8,6 +9,11 @@ const Privacy = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Privacy Policy"
+        description="VDS Privacy Policy. Learn how we collect, use, and protect your personal data."
+        canonical="https://vds.se/privacy"
+      />
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl">
