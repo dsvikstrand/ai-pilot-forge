@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -294,6 +295,12 @@ export default function AIReadinessTest() {
 
   return (
     <Layout>
+      <SEO
+        title="AI Readiness Assessment"
+        description="Find out if your business is ready for AI. Take our free 12-question assessment to evaluate your data, processes, and organizational readiness."
+        canonical="https://vds.se/ai-readiness-test"
+      />
+      {/* Hero Section */}
       {/* Hero Section */}
       <section className="hero-gradient relative overflow-hidden py-24 lg:py-32">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(210_60%_50%/0.15)_0%,_transparent_50%)]" />

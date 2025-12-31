@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
+import { FAQSchema } from "@/components/StructuredData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -54,8 +56,21 @@ export default function CustomAI() {
 
   const tr = translations.customAIPage;
 
+  // FAQ items for structured data
+  const faqItemsData = translations.customAIPage.faq.items;
+  const faqItems = faqItemsData.map((item) => ({
+    question: t(item.question, language),
+    answer: t(item.answer, language),
+  }));
+
   return (
     <Layout>
+      <SEO
+        title="Custom AI Pilots - From Idea to Production"
+        description="Build custom AI solutions tailored to your business. Visual inspection, document processing, and predictive analytics for Swedish SMEs."
+        canonical="https://vds.se/custom-ai"
+      />
+      <FAQSchema items={faqItems} />
       {/* Hero Section */}
       <section className="hero-gradient relative overflow-hidden py-24 lg:py-32">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(210_60%_50%/0.15)_0%,_transparent_50%)]" />

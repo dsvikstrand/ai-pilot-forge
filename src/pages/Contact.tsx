@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { Mail, MapPin, Github, Linkedin } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -9,6 +10,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contact VDS - Let's Build Your AI Pilot"
+        description="Get in touch to discuss your AI project. Email david@vdsai.se or connect on LinkedIn and GitHub."
+        canonical="https://vds.se/contact"
+      />
       <section className="bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">

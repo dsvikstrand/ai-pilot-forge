@@ -1,4 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
+import { ProfessionalServiceSchema } from "@/components/StructuredData";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { Search, Image, Zap, Tags, Boxes, FileCode, CheckCircle2 } from "lucide-react";
@@ -21,6 +23,12 @@ const Services = () => {
 
   return (
     <Layout>
+      <SEO
+        title="AI Services - RAG, Visual Search, Inference"
+        description="Specialized AI services including RAG systems, visual search, inference optimization, auto-tagging, prototyping, and deployment for Swedish SMEs."
+        canonical="https://vds.se/services"
+      />
+      <ProfessionalServiceSchema />
       <section className="bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">

@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray } from "@/i18n/translations";
@@ -142,6 +143,11 @@ export default function AgenticWorkflows() {
 
   return (
     <Layout>
+      <SEO
+        title="Agentic AI Workflows"
+        description="Autonomous AI agents that handle complex tasks independently. Research, customer service, and operations automation for Swedish SMEs."
+        canonical="https://vds.se/agentic-workflows"
+      />
       {/* Hero */}
       <section className="bg-gradient-to-b from-secondary/50 to-background py-20 lg:py-28">
         <div className="container mx-auto px-4 lg:px-8">
