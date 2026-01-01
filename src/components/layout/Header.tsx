@@ -8,7 +8,6 @@ import vdsLogo from "@/assets/vds-logo.jpg";
 
 const customAINav = { sv: "Skräddarsydd AI", en: "Custom AI" };
 const aiReadinessNav = { sv: "AI-beredskapstest", en: "AI Readiness Test" };
-const blogNav = { sv: "Blogg", en: "Blog" };
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,7 +19,6 @@ export function Header() {
     { href: "/services", label: t(translations.nav.services, language) },
     { href: "/custom-ai", label: t(customAINav, language) },
     { href: "/agentic-workflows", label: t(translations.nav.agenticWorkflows, language) },
-    { href: "/blog", label: t(blogNav, language) },
     { href: "/about", label: t(translations.nav.about, language) },
     { href: "/contact", label: t(translations.nav.contact, language) },
   ];

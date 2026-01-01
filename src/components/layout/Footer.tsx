@@ -13,6 +13,7 @@ export function Footer() {
       { href: "/services", label: t(translations.nav.services, language) },
       { href: "/custom-ai", label: t({ sv: "Skräddarsydd AI", en: "Custom AI" }, language) },
       { href: "/about", label: t(translations.nav.about, language) },
+      { href: "/blog", label: t({ sv: "Blogg", en: "Blog" }, language) },
     ],
     legal: [
       { href: "/contact", label: t(translations.nav.contact, language) },
