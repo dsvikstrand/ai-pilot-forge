@@ -101,3 +101,54 @@ export function FAQSchema({ items }: FAQSchemaProps) {
     </Helmet>
   );
 }
+
+interface ArticleSchemaProps {
+  headline: string;
+  description: string;
+  author: string;
+  datePublished: string;
+  image?: string;
+  keywords?: string[];
+}
+
+export function ArticleSchema({
+  headline,
+  description,
+  author,
+  datePublished,
+  image,
+  keywords = [],
+}: ArticleSchemaProps) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    author: {
+      "@type": "Person",
+      name: author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Vikstrand Deep Solutions",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://vds.se/vds-logo.jpg",
+      },
+    },
+    datePublished,
+    dateModified: datePublished,
+    ...(image && { image }),
+    ...(keywords.length > 0 && { keywords: keywords.join(", ") }),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://vds.se/blog",
+    },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+}
