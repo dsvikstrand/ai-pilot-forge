@@ -6,7 +6,7 @@ keywords: ["RAG", "customer support AI", "Swedish SME", "AI automation", "retrie
 author: "David Vikstrand"
 date: "2025-01-15"
 category: "Technical"
-image: "/blog/rag-cover.jpg"
+image: "blog/imgs/img_0.png"
 ---
 
 ## The Customer Support Challenge
