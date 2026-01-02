@@ -1,5 +1,5 @@
 import { Check, ArrowRight } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -7,13 +7,14 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 interface PilotCardProps {
   title: string;
   duration: string;
+  price?: string;
   description: string;
   deliverables: string[];
   featured?: boolean;
   delay?: number;
 }
 
-export function PilotCard({ title, duration, description, deliverables, featured = false, delay = 0 }: PilotCardProps) {
+export function PilotCard({ title, duration, price, description, deliverables, featured = false, delay = 0 }: PilotCardProps) {
   const ref = useScrollReveal<HTMLDivElement>();
 
   return (
@@ -29,9 +30,10 @@ export function PilotCard({ title, duration, description, deliverables, featured
           Popular
         </div>
       )}
-      <CardHeader>
+      <CardHeader className="pt-8">
         <CardTitle className="text-xl">{title}</CardTitle>
-        <CardDescription className="text-sm font-medium text-accent">{duration}</CardDescription>
+        <p className="text-sm font-medium text-accent">{duration}</p>
+        {price && <p className="text-2xl font-bold text-foreground mt-2">{price}</p>}
       </CardHeader>
       <CardContent className="space-y-6">
         <p className="text-sm text-muted-foreground">{description}</p>
