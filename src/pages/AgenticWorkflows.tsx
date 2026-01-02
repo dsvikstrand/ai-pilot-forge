@@ -5,6 +5,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray } from "@/i18n/translations";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Link } from "react-router-dom";
+import { PilotCard } from "@/components/ui/PilotCard";
 import { 
   Bot, 
   ArrowRight, 
@@ -17,7 +18,8 @@ import {
   Clock,
   Target,
   Lightbulb,
-  Cog
+  Cog,
+  Sparkles
 } from "lucide-react";
 
 function UseCaseCard({ icon: Icon, title, description, examples, index }: {
@@ -144,8 +146,11 @@ export default function AgenticWorkflows() {
   return (
     <Layout>
       <SEO
-        title="Agentic AI Workflows"
-        description="Autonomous AI agents that handle complex tasks independently. Research, customer service, and operations automation for Swedish SMEs."
+        title={language === 'sv' ? "Agentiska AI-arbetsflöden för svenska SMF | VDS" : "Agentic AI Workflows for Swedish SMEs | VDS"}
+        description={language === 'sv' 
+          ? "Autonoma AI-agenter som hanterar komplexa uppgifter självständigt. Research, kundtjänst och operationell automatisering för svenska små och medelstora företag."
+          : "Autonomous AI agents that handle complex tasks independently. Research, customer service, and operations automation for Swedish SMEs. Get a pilot in 4-6 weeks."
+        }
         canonical="https://vds.se/agentic-workflows"
       />
       {/* Hero */}
@@ -173,9 +178,9 @@ export default function AgenticWorkflows() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/custom-ai">
+                <a href="#agentic-pilots">
                   {t(translations.agenticPage.ctaSecondary, language)}
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
@@ -270,8 +275,51 @@ export default function AgenticWorkflows() {
         </div>
       </section>
 
+      {/* Agentic Pilots Section */}
+      <section id="agentic-pilots" className="bg-secondary/30 py-20 lg:py-28 scroll-mt-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+              <Sparkles className="h-4 w-4" />
+              {t(translations.agenticPage.agenticPilots.badge, language)}
+            </div>
+            <h2 className="text-3xl font-bold md:text-4xl">
+              {t(translations.agenticPage.agenticPilots.title, language)}
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              {t(translations.agenticPage.agenticPilots.subtitle, language)}
+            </p>
+          </div>
+          
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+            <PilotCard
+              title={t(translations.agenticPage.agenticPilots.tiers.assessment.title, language)}
+              duration={t(translations.agenticPage.agenticPilots.tiers.assessment.duration, language)}
+              description={t(translations.agenticPage.agenticPilots.tiers.assessment.description, language)}
+              deliverables={tArray(translations.agenticPage.agenticPilots.tiers.assessment.deliverables, language)}
+              delay={0}
+            />
+            <PilotCard
+              title={t(translations.agenticPage.agenticPilots.tiers.pilot.title, language)}
+              duration={t(translations.agenticPage.agenticPilots.tiers.pilot.duration, language)}
+              description={t(translations.agenticPage.agenticPilots.tiers.pilot.description, language)}
+              deliverables={tArray(translations.agenticPage.agenticPilots.tiers.pilot.deliverables, language)}
+              featured={true}
+              delay={100}
+            />
+            <PilotCard
+              title={t(translations.agenticPage.agenticPilots.tiers.production.title, language)}
+              duration={t(translations.agenticPage.agenticPilots.tiers.production.duration, language)}
+              description={t(translations.agenticPage.agenticPilots.tiers.production.description, language)}
+              deliverables={tArray(translations.agenticPage.agenticPilots.tiers.production.deliverables, language)}
+              delay={200}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* How We Work */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold md:text-4xl">
