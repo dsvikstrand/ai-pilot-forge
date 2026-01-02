@@ -416,6 +416,50 @@ export const translations = {
       description: { sv: "Vi hjälper dig identifiera rätt användningsfall, bygga en pilot och mäta resultaten—innan du investerar i full skala.", en: "We help you identify the right use case, build a pilot, and measure results—before you invest at full scale." },
       cta: { sv: "Boka ett samtal", en: "Book a call" },
     },
+
+    agenticPilots: {
+      badge: { sv: "Agentic Piloter", en: "Agentic Pilots" },
+      title: { sv: "Börja med en fokuserad pilot", en: "Start with a focused pilot" },
+      subtitle: { sv: "Välj det format som passar din organisations mognad och ambitionsnivå för agentisk automatisering.", en: "Choose the format that fits your organization's maturity and ambition level for agentic automation." },
+      tiers: {
+        assessment: {
+          title: { sv: "Arbetsflödesanalys", en: "Workflow Assessment" },
+          duration: { sv: "1–2 veckor", en: "1–2 weeks" },
+          description: { sv: "Utvärdera om ditt arbetsflöde passar för agentisk automatisering. Vi kartlägger beslutsträd, identifierar verktygsbehov och bedömer komplexitet.", en: "Evaluate if your workflow is suited for agentic automation. We map decision trees, identify tool requirements, and assess complexity." },
+          deliverables: [
+            { sv: "Arbetsflödeskartläggning med beslutsträd", en: "Workflow mapping with decision trees" },
+            { sv: "Analys av beslutspunkter och beroenden", en: "Decision point and dependency analysis" },
+            { sv: "Verktygs- och integrationsidentifiering", en: "Tool and integration identification" },
+            { sv: "Komplexitetsbedömning och riskanalys", en: "Complexity assessment and risk analysis" },
+            { sv: "Go/no-go-rekommendation med nästa steg", en: "Go/no-go recommendation with next steps" },
+          ],
+        },
+        pilot: {
+          title: { sv: "Agentic Pilot", en: "Agentic Pilot" },
+          duration: { sv: "4–6 veckor", en: "4–6 weeks" },
+          description: { sv: "Bygg en fungerande AI-agent för ett specifikt arbetsflöde. Inkluderar säkerhetsmekanismer, mänsklig översyn och prestandaövervakning.", en: "Build a working AI agent for a specific workflow. Includes guardrails, human oversight, and performance monitoring." },
+          deliverables: [
+            { sv: "Fungerande AI-agent för ett arbetsflöde", en: "Working AI agent for one workflow" },
+            { sv: "Konfigurerade säkerhetsmekanismer", en: "Configured guardrails and safety mechanisms" },
+            { sv: "Integration med mänsklig översyn", en: "Human-in-the-loop integration" },
+            { sv: "Prestandamätvärden och dashboard", en: "Performance metrics and dashboard" },
+            { sv: "Driftsättningsvägledning och dokumentation", en: "Deployment guidance and documentation" },
+          ],
+        },
+        production: {
+          title: { sv: "Multi-Agent Produktion", en: "Multi-Agent Production" },
+          duration: { sv: "8–12+ veckor", en: "8–12+ weeks" },
+          description: { sv: "Produktionsredo multi-agentsystem med orkestrering, iterationsloopar och full överlämning till ditt team.", en: "Production-ready multi-agent system with orchestration, iteration loops, and full handover to your team." },
+          deliverables: [
+            { sv: "Multi-agent orkestrering och koordinering", en: "Multi-agent orchestration and coordination" },
+            { sv: "Övervaknings-dashboard och alerting", en: "Monitoring dashboard and alerting" },
+            { sv: "Iterationsloopar för kontinuerlig förbättring", en: "Iteration loops for continuous improvement" },
+            { sv: "Full systemintegration och API:er", en: "Full system integration and APIs" },
+            { sv: "Teamutbildning och överlämningsdokumentation", en: "Team training and handover documentation" },
+          ],
+        },
+      },
+    },
   },
 
   customAIPage: {
