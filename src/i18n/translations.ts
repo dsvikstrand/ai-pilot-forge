@@ -425,6 +425,7 @@ export const translations = {
         assessment: {
           title: { sv: "Arbetsflödesanalys", en: "Workflow Assessment" },
           duration: { sv: "1–2 veckor", en: "1–2 weeks" },
+          price: { sv: "från 25 000 kr", en: "from 25,000 SEK" },
           description: { sv: "Utvärdera om ditt arbetsflöde passar för agentisk automatisering. Vi kartlägger beslutsträd, identifierar verktygsbehov och bedömer komplexitet.", en: "Evaluate if your workflow is suited for agentic automation. We map decision trees, identify tool requirements, and assess complexity." },
           deliverables: [
             { sv: "Arbetsflödeskartläggning med beslutsträd", en: "Workflow mapping with decision trees" },
@@ -437,6 +438,7 @@ export const translations = {
         pilot: {
           title: { sv: "Agentic Pilot", en: "Agentic Pilot" },
           duration: { sv: "4–6 veckor", en: "4–6 weeks" },
+          price: { sv: "från 75 000 kr", en: "from 75,000 SEK" },
           description: { sv: "Bygg en fungerande AI-agent för ett specifikt arbetsflöde. Inkluderar säkerhetsmekanismer, mänsklig översyn och prestandaövervakning.", en: "Build a working AI agent for a specific workflow. Includes guardrails, human oversight, and performance monitoring." },
           deliverables: [
             { sv: "Fungerande AI-agent för ett arbetsflöde", en: "Working AI agent for one workflow" },
@@ -449,6 +451,7 @@ export const translations = {
         production: {
           title: { sv: "Multi-Agent Produktion", en: "Multi-Agent Production" },
           duration: { sv: "8–12+ veckor", en: "8–12+ weeks" },
+          price: { sv: "kontakta oss", en: "contact us" },
           description: { sv: "Produktionsredo multi-agentsystem med orkestrering, iterationsloopar och full överlämning till ditt team.", en: "Production-ready multi-agent system with orchestration, iteration loops, and full handover to your team." },
           deliverables: [
             { sv: "Multi-agent orkestrering och koordinering", en: "Multi-agent orchestration and coordination" },

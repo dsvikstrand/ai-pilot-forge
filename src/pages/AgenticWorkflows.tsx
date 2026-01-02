@@ -295,6 +295,7 @@ export default function AgenticWorkflows() {
             <PilotCard
               title={t(translations.agenticPage.agenticPilots.tiers.assessment.title, language)}
               duration={t(translations.agenticPage.agenticPilots.tiers.assessment.duration, language)}
+              price={t(translations.agenticPage.agenticPilots.tiers.assessment.price, language)}
               description={t(translations.agenticPage.agenticPilots.tiers.assessment.description, language)}
               deliverables={tArray(translations.agenticPage.agenticPilots.tiers.assessment.deliverables, language)}
               delay={0}
@@ -302,6 +303,7 @@ export default function AgenticWorkflows() {
             <PilotCard
               title={t(translations.agenticPage.agenticPilots.tiers.pilot.title, language)}
               duration={t(translations.agenticPage.agenticPilots.tiers.pilot.duration, language)}
+              price={t(translations.agenticPage.agenticPilots.tiers.pilot.price, language)}
               description={t(translations.agenticPage.agenticPilots.tiers.pilot.description, language)}
               deliverables={tArray(translations.agenticPage.agenticPilots.tiers.pilot.deliverables, language)}
               featured={true}
@@ -310,6 +312,7 @@ export default function AgenticWorkflows() {
             <PilotCard
               title={t(translations.agenticPage.agenticPilots.tiers.production.title, language)}
               duration={t(translations.agenticPage.agenticPilots.tiers.production.duration, language)}
+              price={t(translations.agenticPage.agenticPilots.tiers.production.price, language)}
               description={t(translations.agenticPage.agenticPilots.tiers.production.description, language)}
               deliverables={tArray(translations.agenticPage.agenticPilots.tiers.production.deliverables, language)}
               delay={200}
