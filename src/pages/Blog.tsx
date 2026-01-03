@@ -57,7 +57,7 @@ export default function Blog() {
                         <div className="aspect-video overflow-hidden rounded-t-lg">
                           <img
                             src={post.image}
-                            alt={post.title}
+                            alt={post.title[language]}
                             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                           />
                         </div>
@@ -67,10 +67,10 @@ export default function Blog() {
                           <Badge variant="secondary">{post.category}</Badge>
                         </div>
                         <CardTitle className="line-clamp-2 text-xl group-hover:text-primary">
-                          {post.title}
+                          {post.title[language]}
                         </CardTitle>
                         <CardDescription className="line-clamp-3">
-                          {post.description}
+                          {post.description[language]}
                         </CardDescription>
                       </CardHeader>
                       <CardContent>
@@ -82,7 +82,7 @@ export default function Blog() {
                             </span>
                             <span className="flex items-center gap-1">
                               <Clock className="h-4 w-4" />
-                              {calculateReadingTime(post.content)} {t(blogTranslations.minRead)}
+                              {calculateReadingTime(post.content[language])} {t(blogTranslations.minRead)}
                             </span>
                           </div>
                         </div>

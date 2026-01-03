@@ -1,6 +1,9 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeHighlight from "rehype-highlight";
+import rehypeKatex from "rehype-katex";
 import { Calendar, Clock, ArrowLeft, User } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/SEO";
@@ -40,14 +43,14 @@ export default function BlogPost() {
   return (
     <Layout>
       <SEO
-        title={post.title}
-        description={post.description}
+        title={post.title[language]}
+        description={post.description[language]}
         canonical={`https://vds.se/blog/${post.slug}`}
         type="article"
       />
       <ArticleSchema
-        headline={post.title}
-        description={post.description}
+        headline={post.title[language]}
+        description={post.description[language]}
         author={post.author}
         datePublished={post.date}
         image={post.image}
@@ -72,10 +75,10 @@ export default function BlogPost() {
               {post.category}
             </Badge>
             <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
-              {post.title}
+              {post.title[language]}
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              {post.description}
+              {post.description[language]}
             </p>
 
             {/* Meta info */}
@@ -90,7 +93,7 @@ export default function BlogPost() {
               </span>
               <span className="flex items-center gap-1">
                 <Clock className="h-4 w-4" />
-                {calculateReadingTime(post.content)} {t(blogPostTranslations.minRead)}
+                {calculateReadingTime(post.content[language])} {t(blogPostTranslations.minRead)}
               </span>
             </div>
 
@@ -99,7 +102,7 @@ export default function BlogPost() {
               <div className="mt-8 aspect-video overflow-hidden rounded-lg">
                 <img
                   src={post.image}
-                  alt={post.title}
+                  alt={post.title[language]}
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -107,9 +110,12 @@ export default function BlogPost() {
           </header>
 
           {/* Article content */}
-          <div className="prose prose-lg mx-auto mt-12 max-w-3xl dark:prose-invert prose-headings:font-bold prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-code:rounded prose-code:bg-muted prose-code:px-1 prose-code:py-0.5">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {post.content}
+          <div className="prose prose-lg mx-auto mt-12 max-w-3xl dark:prose-invert prose-headings:font-bold prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-code:rounded prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-pre:bg-muted prose-pre:border prose-pre:border-border">
+            <ReactMarkdown 
+              remarkPlugins={[remarkGfm, remarkMath]}
+              rehypePlugins={[rehypeHighlight, rehypeKatex]}
+            >
+              {post.content[language]}
             </ReactMarkdown>
           </div>
 
@@ -140,10 +146,10 @@ export default function BlogPost() {
                     className="group rounded-lg border border-border p-4 transition-colors hover:border-primary/50"
                   >
                     <h3 className="font-medium text-foreground group-hover:text-primary">
-                      {relatedPost.title}
+                      {relatedPost.title[language]}
                     </h3>
                     <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
-                      {relatedPost.description}
+                      {relatedPost.description[language]}
                     </p>
                   </Link>
                 ))}
