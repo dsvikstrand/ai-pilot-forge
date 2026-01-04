@@ -1,10 +1,13 @@
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { getBasePath } from "@/hooks/useLocalizedLink";
 
 interface SEOProps {
-  title: string;
-  description: string;
-  canonical?: string;
+  titleEn: string;
+  titleSv: string;
+  descriptionEn: string;
+  descriptionSv: string;
   image?: string;
   type?: string;
   noindex?: boolean;
@@ -15,20 +18,38 @@ const DEFAULT_IMAGE = `${BASE_URL}/vds-og-image.jpg`;
 const SITE_NAME = "VDS - Vikstrand Deep Solutions";
 
 export function SEO({
-  title,
-  description,
-  canonical,
+  titleEn,
+  titleSv,
+  descriptionEn,
+  descriptionSv,
   image = DEFAULT_IMAGE,
   type = "website",
   noindex = false,
 }: SEOProps) {
   const { language } = useLanguage();
+  const location = useLocation();
+  
+  // Get the base path without language prefix for hreflang
+  const basePath = getBasePath(location.pathname);
+  
+  // Current language content
+  const title = language === "sv" ? titleSv : titleEn;
+  const description = language === "sv" ? descriptionSv : descriptionEn;
   const fullTitle = title === SITE_NAME ? title : `${title} | VDS`;
-  const canonicalUrl = canonical || BASE_URL;
+  
+  // Generate canonical URL based on current language
+  const canonicalUrl = language === "sv"
+    ? (basePath === "/" ? `${BASE_URL}/sv` : `${BASE_URL}/sv${basePath}`)
+    : `${BASE_URL}${basePath}`;
+  
+  // Generate hreflang URLs
+  const enUrl = `${BASE_URL}${basePath}`;
+  const svUrl = basePath === "/" ? `${BASE_URL}/sv` : `${BASE_URL}/sv${basePath}`;
 
   return (
     <Helmet>
       {/* Basic meta tags */}
+      <html lang={language} />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {noindex && <meta name="robots" content="noindex,nofollow" />}
@@ -49,10 +70,10 @@ export function SEO({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
-      {/* hreflang for language variants */}
-      <link rel="alternate" hrefLang="en" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="sv" href={`${canonicalUrl}${canonicalUrl.includes("?") ? "&" : "?"}lang=sv`} />
-      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+      {/* hreflang for language variants - proper path-based URLs */}
+      <link rel="alternate" hrefLang="en" href={enUrl} />
+      <link rel="alternate" hrefLang="sv" href={svUrl} />
+      <link rel="alternate" hrefLang="x-default" href={enUrl} />
     </Helmet>
   );
 }

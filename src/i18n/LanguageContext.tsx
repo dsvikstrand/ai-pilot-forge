@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, ReactNode, useMemo } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Language } from "./translations";
 
 interface LanguageContextType {
@@ -9,15 +10,33 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem("vds-language");
-    return (saved as Language) || "sv";
-  });
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Derive language from URL path
+  const language: Language = useMemo(() => {
+    return location.pathname.startsWith("/sv") ? "sv" : "en";
+  }, [location.pathname]);
 
-  useEffect(() => {
-    localStorage.setItem("vds-language", language);
-    document.documentElement.lang = language;
-  }, [language]);
+  // Switch language by navigating to the equivalent path
+  const setLanguage = (lang: Language) => {
+    const currentPath = location.pathname;
+    const searchParams = location.search;
+    
+    if (lang === "sv") {
+      // Add /sv prefix if not already present
+      if (!currentPath.startsWith("/sv")) {
+        const newPath = currentPath === "/" ? "/sv" : `/sv${currentPath}`;
+        navigate(newPath + searchParams);
+      }
+    } else {
+      // Remove /sv prefix for English
+      if (currentPath.startsWith("/sv")) {
+        const newPath = currentPath.replace(/^\/sv/, "") || "/";
+        navigate(newPath + searchParams);
+      }
+    }
+  };
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

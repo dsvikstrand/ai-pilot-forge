@@ -14,9 +14,10 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        title="About VDS - Vikstrand Deep Solutions"
-        description="Learn about the founder of VDS and how we help Swedish SMEs implement GPU-powered AI solutions. From idea to working prototype."
-        canonical="https://vds.se/about"
+        titleEn="About VDS - Vikstrand Deep Solutions"
+        titleSv="Om VDS - Vikstrand Deep Solutions"
+        descriptionEn="Learn about the founder of VDS and how we help Swedish SMEs implement GPU-powered AI solutions. From idea to working prototype."
+        descriptionSv="Lär dig om grundaren av VDS och hur vi hjälper svenska SMF att implementera GPU-drivna AI-lösningar. Från idé till fungerande prototyp."
       />
       <section className="bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">

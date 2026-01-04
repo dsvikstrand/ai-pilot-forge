@@ -24,15 +24,24 @@ export default function BlogPost() {
   const { language } = useLanguage();
 
   const t = (obj: { sv: string; en: string }) => obj[language];
+  
+  // Helper to get localized paths
+  const getLocalizedPath = (basePath: string): string => {
+    return language === "sv" ? `/sv${basePath}` : basePath;
+  };
+  
+  const getLocalizedBlogPath = (postSlug: string): string => {
+    return language === "sv" ? `/sv/blog/${postSlug}` : `/blog/${postSlug}`;
+  };
 
   if (!slug) {
-    return <Navigate to="/blog" replace />;
+    return <Navigate to={getLocalizedPath("/blog")} replace />;
   }
 
   const post = getPostBySlug(slug);
 
   if (!post) {
-    return <Navigate to="/blog" replace />;
+    return <Navigate to={getLocalizedPath("/blog")} replace />;
   }
 
   // Get related posts (same category, excluding current)
@@ -43,9 +52,10 @@ export default function BlogPost() {
   return (
     <Layout>
       <SEO
-        title={post.title[language]}
-        description={post.description[language]}
-        canonical={`https://vds.se/blog/${post.slug}`}
+        titleEn={post.title.en}
+        titleSv={post.title.sv}
+        descriptionEn={post.description.en}
+        descriptionSv={post.description.sv}
         type="article"
       />
       <ArticleSchema
@@ -62,7 +72,7 @@ export default function BlogPost() {
           {/* Back button */}
           <div className="mx-auto max-w-3xl">
             <Button variant="ghost" asChild className="mb-8">
-              <Link to="/blog" className="flex items-center gap-2">
+              <Link to={getLocalizedPath("/blog")} className="flex items-center gap-2">
                 <ArrowLeft className="h-4 w-4" />
                 {t(blogPostTranslations.backToBlog)}
               </Link>
@@ -142,7 +152,7 @@ export default function BlogPost() {
                 {relatedPosts.map((relatedPost) => (
                   <Link
                     key={relatedPost.slug}
-                    to={`/blog/${relatedPost.slug}`}
+                    to={getLocalizedBlogPath(relatedPost.slug)}
                     className="group rounded-lg border border-border p-4 transition-colors hover:border-primary/50"
                   >
                     <h3 className="font-medium text-foreground group-hover:text-primary">

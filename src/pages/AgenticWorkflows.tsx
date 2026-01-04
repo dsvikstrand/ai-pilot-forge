@@ -146,12 +146,10 @@ export default function AgenticWorkflows() {
   return (
     <Layout>
       <SEO
-        title={language === 'sv' ? "Agentiska AI-arbetsflöden för svenska SMF | VDS" : "Agentic AI Workflows for Swedish SMEs | VDS"}
-        description={language === 'sv' 
-          ? "Autonoma AI-agenter som hanterar komplexa uppgifter självständigt. Research, kundtjänst och operationell automatisering för svenska små och medelstora företag."
-          : "Autonomous AI agents that handle complex tasks independently. Research, customer service, and operations automation for Swedish SMEs. Get a pilot in 4-6 weeks."
-        }
-        canonical="https://vds.se/agentic-workflows"
+        titleEn="Agentic AI Workflows for Swedish SMEs | VDS"
+        titleSv="Agentiska AI-arbetsflöden för svenska SMF | VDS"
+        descriptionEn="Autonomous AI agents that handle complex tasks independently. Research, customer service, and operations automation for Swedish SMEs. Get a pilot in 4-6 weeks."
+        descriptionSv="Autonoma AI-agenter som hanterar komplexa uppgifter självständigt. Research, kundtjänst och operationell automatisering för svenska små och medelstora företag."
       />
       {/* Hero */}
       <section className="bg-gradient-to-b from-secondary/50 to-background py-20 lg:py-28">

@@ -66,9 +66,10 @@ export default function CustomAI() {
   return (
     <Layout>
       <SEO
-        title="Custom AI Pilots - From Idea to Production"
-        description="Build custom AI solutions tailored to your business. Visual inspection, document processing, and predictive analytics for Swedish SMEs."
-        canonical="https://vds.se/custom-ai"
+        titleEn="Custom AI Pilots - From Idea to Production"
+        titleSv="Skräddarsydda AI-piloter - Från idé till produktion"
+        descriptionEn="Build custom AI solutions tailored to your business. Visual inspection, document processing, and predictive analytics for Swedish SMEs."
+        descriptionSv="Bygg skräddarsydda AI-lösningar anpassade för ditt företag. Visuell inspektion, dokumentbehandling och prediktiv analys för svenska SMF."
       />
       <FAQSchema items={faqItems} />
       {/* Hero Section */}

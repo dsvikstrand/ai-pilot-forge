@@ -11,9 +11,10 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        title="Contact VDS - Let's Build Your AI Pilot"
-        description="Get in touch to discuss your AI project. Email david@vdsai.se or connect on LinkedIn and GitHub."
-        canonical="https://vds.se/contact"
+        titleEn="Contact VDS - Let's Build Your AI Pilot"
+        titleSv="Kontakta VDS - Låt oss bygga din AI-pilot"
+        descriptionEn="Get in touch to discuss your AI project. Email david@vdsai.se or connect on LinkedIn and GitHub."
+        descriptionSv="Hör av dig för att diskutera ditt AI-projekt. E-post david@vdsai.se eller anslut via LinkedIn och GitHub."
       />
       <section className="bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">

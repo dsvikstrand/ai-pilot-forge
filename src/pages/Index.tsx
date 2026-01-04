@@ -11,9 +11,10 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="VDS - Vikstrand Deep Solutions"
-        description="GPU-powered AI pilots for Swedish SMEs. From idea to working prototype—fast, measurable, and built to ship. RAG, visual search, inference optimization."
-        canonical="https://vds.se"
+        titleEn="VDS - Vikstrand Deep Solutions"
+        titleSv="VDS - Vikstrand Deep Solutions"
+        descriptionEn="GPU-powered AI pilots for Swedish SMEs. From idea to working prototype—fast, measurable, and built to ship. RAG, visual search, inference optimization."
+        descriptionSv="GPU-drivna AI-piloter för svenska SMF. Från idé till fungerande prototyp—snabbt, mätbart och byggt för leverans. RAG, visuell sökning, inferensoptimering."
       />
       <HeroSection />
       <ServicesOverview />
