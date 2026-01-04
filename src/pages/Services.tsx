@@ -24,9 +24,10 @@ const Services = () => {
   return (
     <Layout>
       <SEO
-        title="AI Services - RAG, Visual Search, Inference"
-        description="Specialized AI services including RAG systems, visual search, inference optimization, auto-tagging, prototyping, and deployment for Swedish SMEs."
-        canonical="https://vds.se/services"
+        titleEn="AI Services - RAG, Visual Search, Inference"
+        titleSv="AI-tjänster - RAG, Visuell sökning, Inferens"
+        descriptionEn="Specialized AI services including RAG systems, visual search, inference optimization, auto-tagging, prototyping, and deployment for Swedish SMEs."
+        descriptionSv="Specialiserade AI-tjänster inklusive RAG-system, visuell sökning, inferensoptimering, auto-taggning, prototyping och driftsättning för svenska SMF."
       />
       <ProfessionalServiceSchema />
       <section className="bg-secondary/30 py-16 lg:py-24">

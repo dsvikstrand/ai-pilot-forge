@@ -296,9 +296,10 @@ export default function AIReadinessTest() {
   return (
     <Layout>
       <SEO
-        title="AI Readiness Assessment"
-        description="Find out if your business is ready for AI. Take our free 12-question assessment to evaluate your data, processes, and organizational readiness."
-        canonical="https://vds.se/ai-readiness-test"
+        titleEn="AI Readiness Assessment"
+        titleSv="AI-beredskapsbedömning"
+        descriptionEn="Find out if your business is ready for AI. Take our free 12-question assessment to evaluate your data, processes, and organizational readiness."
+        descriptionSv="Ta reda på om ditt företag är redo för AI. Gör vår kostnadsfria 12-frågeanalys för att utvärdera din data, processer och organisatoriska beredskap."
       />
       {/* Hero Section */}
       {/* Hero Section */}

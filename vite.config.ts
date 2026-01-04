@@ -15,4 +15,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Pre-rendering will be handled by a separate build script
+    // The static HTML files will be generated post-build using a Node.js script
+    // This allows us to have proper static HTML with all SEO content
+  },
 }));

@@ -10,9 +10,10 @@ const Privacy = () => {
   return (
     <Layout>
       <SEO
-        title="Privacy Policy"
-        description="VDS Privacy Policy. Learn how we collect, use, and protect your personal data."
-        canonical="https://vds.se/privacy"
+        titleEn="Privacy Policy"
+        titleSv="Integritetspolicy"
+        descriptionEn="VDS Privacy Policy. Learn how we collect, use, and protect your personal data."
+        descriptionSv="VDS Integritetspolicy. Läs om hur vi samlar in, använder och skyddar dina personuppgifter."
       />
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">

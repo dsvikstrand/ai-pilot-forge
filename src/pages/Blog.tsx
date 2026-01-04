@@ -23,13 +23,19 @@ export default function Blog() {
   const posts = getAllPosts();
 
   const t = (obj: { sv: string; en: string }) => obj[language];
+  
+  // Helper to get localized blog post path
+  const getLocalizedBlogPath = (slug: string): string => {
+    return language === "sv" ? `/sv/blog/${slug}` : `/blog/${slug}`;
+  };
 
   return (
     <Layout>
       <SEO
-        title="Blog - AI Insights & Practical Solutions"
-        description="Insights on AI, machine learning, and practical solutions for Swedish SMEs. Learn about RAG systems, visual search, and AI implementation strategies."
-        canonical="https://vds.se/blog"
+        titleEn="Blog - AI Insights & Practical Solutions"
+        titleSv="Blogg - AI-insikter & praktiska lösningar"
+        descriptionEn="Insights on AI, machine learning, and practical solutions for Swedish SMEs. Learn about RAG systems, visual search, and AI implementation strategies."
+        descriptionSv="Insikter om AI, maskininlärning och praktiska lösningar för svenska SMF. Läs om RAG-system, visuell sökning och AI-implementeringsstrategier."
       />
 
       <section className="py-20 md:py-28">
@@ -51,7 +57,7 @@ export default function Blog() {
             ) : (
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {posts.map((post) => (
-                  <Link key={post.slug} to={`/blog/${post.slug}`}>
+                  <Link key={post.slug} to={getLocalizedBlogPath(post.slug)}>
                     <Card className="group h-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg">
                       {post.image && (
                         <div className="aspect-video overflow-hidden rounded-t-lg">

@@ -35,7 +35,11 @@ function FeatureItem({ icon: Icon, title, description, index }: {
 export function AgenticWorkflowsSection() {
   const { language } = useLanguage();
   const sectionRef = useScrollReveal<HTMLDivElement>();
-
+  
+  // Helper to get localized path
+  const getLocalizedPath = (basePath: string): string => {
+    return language === "sv" ? `/sv${basePath}` : basePath;
+  };
   const features = [
     {
       icon: Workflow,
@@ -89,7 +93,7 @@ export function AgenticWorkflowsSection() {
 
               <div className="mt-8">
                 <Button asChild size="lg">
-                  <Link to="/agentic-workflows">
+                  <Link to={getLocalizedPath("/agentic-workflows")}>
                     {t(translations.agenticSection.cta, language)}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>

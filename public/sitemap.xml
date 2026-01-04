@@ -1,63 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home -->
   <url>
     <loc>https://vds.se/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/"/>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://vds.se/sv</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/"/>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Services -->
+  <url>
     <loc>https://vds.se/services</loc>
-    <lastmod>2025-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/services"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/services"/>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://vds.se/sv/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/services"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/services"/>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Custom AI -->
   <url>
     <loc>https://vds.se/custom-ai</loc>
-    <lastmod>2025-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/custom-ai"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/custom-ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/custom-ai"/>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vds.se/agentic-workflows</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://vds.se/sv/custom-ai</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/custom-ai"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/custom-ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/custom-ai"/>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
+
+  <!-- Agentic Workflows -->
+  <url>
+    <loc>https://vds.se/agentic-workflows</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/agentic-workflows"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/agentic-workflows"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/agentic-workflows"/>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vds.se/sv/agentic-workflows</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/agentic-workflows"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/agentic-workflows"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/agentic-workflows"/>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- AI Readiness Test -->
   <url>
     <loc>https://vds.se/ai-readiness-test</loc>
-    <lastmod>2025-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/ai-readiness-test"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/ai-readiness-test"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/ai-readiness-test"/>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vds.se/about</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://vds.se/sv/ai-readiness-test</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/ai-readiness-test"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/ai-readiness-test"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/ai-readiness-test"/>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://vds.se/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/about"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/about"/>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vds.se/sv/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/about"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/about"/>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
   <url>
     <loc>https://vds.se/contact</loc>
-    <lastmod>2025-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/contact"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/contact"/>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://vds.se/sv/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/contact"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/contact"/>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://vds.se/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/blog"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/blog"/>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vds.se/sv/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/blog"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/blog"/>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog Post: RAG Customer Support -->
+  <url>
+    <loc>https://vds.se/blog/rag-customer-support</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/blog/rag-customer-support"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/blog/rag-customer-support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/blog/rag-customer-support"/>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vds.se/sv/blog/rag-customer-support</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/blog/rag-customer-support"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/blog/rag-customer-support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/blog/rag-customer-support"/>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Privacy -->
+  <url>
     <loc>https://vds.se/privacy</loc>
-    <lastmod>2025-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/privacy"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/privacy"/>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://vds.se/blog</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vds.se/blog/rag-customer-support</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://vds.se/sv/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vds.se/privacy"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://vds.se/sv/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vds.se/privacy"/>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

@@ -7,6 +7,14 @@ import vdsLogo from "@/assets/vds-logo.jpg";
 export function Footer() {
   const { language } = useLanguage();
 
+  // Helper to get localized path
+  const getLocalizedPath = (basePath: string): string => {
+    if (language === "sv") {
+      return basePath === "/" ? "/sv" : `/sv${basePath}`;
+    }
+    return basePath;
+  };
+
   const footerLinks = {
     company: [
       { href: "/", label: t(translations.nav.home, language) },
@@ -27,7 +35,7 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3">
+            <Link to={getLocalizedPath("/")} className="flex items-center gap-3">
               <img 
                 src={vdsLogo} 
                 alt="VDS Logo" 
@@ -71,7 +79,7 @@ export function Footer() {
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
-                    to={link.href}
+                    to={getLocalizedPath(link.href)}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.label}
@@ -90,7 +98,7 @@ export function Footer() {
               {footerLinks.legal.map((link) => (
                 <li key={link.href}>
                   <Link
-                    to={link.href}
+                    to={getLocalizedPath(link.href)}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.label}

@@ -19,31 +19,47 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Define all page routes (without language prefix)
+const PageRoutes = () => (
+  <Routes>
+    <Route path="/" element={<Index />} />
+    <Route path="/services" element={<Services />} />
+    <Route path="/custom-ai" element={<CustomAI />} />
+    <Route path="/agentic-workflows" element={<AgenticWorkflows />} />
+    <Route path="/ai-readiness-test" element={<AIReadinessTest />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/privacy" element={<Privacy />} />
+    <Route path="/blog" element={<Blog />} />
+    <Route path="/blog/:slug" element={<BlogPost />} />
+    {/* Swedish routes - same components, language derived from URL */}
+    <Route path="/sv" element={<Index />} />
+    <Route path="/sv/services" element={<Services />} />
+    <Route path="/sv/custom-ai" element={<CustomAI />} />
+    <Route path="/sv/agentic-workflows" element={<AgenticWorkflows />} />
+    <Route path="/sv/ai-readiness-test" element={<AIReadinessTest />} />
+    <Route path="/sv/about" element={<About />} />
+    <Route path="/sv/contact" element={<Contact />} />
+    <Route path="/sv/privacy" element={<Privacy />} />
+    <Route path="/sv/blog" element={<Blog />} />
+    <Route path="/sv/blog/:slug" element={<BlogPost />} />
+    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+);
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
-      <LanguageProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/custom-ai" element={<CustomAI />} />
-              <Route path="/agentic-workflows" element={<AgenticWorkflows />} />
-              <Route path="/ai-readiness-test" element={<AIReadinessTest />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </LanguageProvider>
+      <BrowserRouter>
+        <LanguageProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <PageRoutes />
+          </TooltipProvider>
+        </LanguageProvider>
+      </BrowserRouter>
     </QueryClientProvider>
   </HelmetProvider>
 );
