@@ -19,6 +19,7 @@ const staticRoutes = [
 // Blog post slugs - add new blog posts here
 const blogSlugs = [
   'rag-customer-support',
+  'building-ai-agents-practical-guide-smes',
 ];
 
 /**
