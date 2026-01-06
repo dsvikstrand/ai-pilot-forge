@@ -3,29 +3,12 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import prerender from "@prerenderer/rollup-plugin";
-
-// Static page routes (without language prefix)
-const staticRoutes = [
-  '/',
-  '/services',
-  '/custom-ai',
-  '/agentic-workflows',
-  '/ai-readiness-test',
-  '/about',
-  '/contact',
-  '/privacy',
-  '/blog',
-];
-
-// Blog post slugs - add new blog posts here when you create them - Here
-const blogSlugs = [
-  'rag-customer-support',
-  'building-ai-agents-practical-guide-smes',
-];
+import { getBlogSlugs, staticRoutes } from "./scripts/routes";
 
 // Generate all routes for pre-rendering (EN + SV)
 function getAllRoutes(): string[] {
   const routes: string[] = [];
+  const blogSlugs = getBlogSlugs();
   
   // English routes
   for (const route of staticRoutes) {

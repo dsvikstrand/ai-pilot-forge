@@ -3,24 +3,9 @@
  * This includes all static pages and blog posts in both EN and SV
  */
 
-// Static page routes (without language prefix)
-const staticRoutes = [
-  '/',
-  '/services',
-  '/custom-ai',
-  '/agentic-workflows',
-  '/ai-readiness-test',
-  '/about',
-  '/contact',
-  '/privacy',
-  '/blog',
-];
+import { getBlogSlugs, staticRoutes } from "./routes";
 
-// Blog post slugs - add new blog posts here
-const blogSlugs = [
-  'rag-customer-support',
-  'building-ai-agents-practical-guide-smes',
-];
+const blogSlugs = getBlogSlugs();
 
 /**
  * Generate all routes for pre-rendering

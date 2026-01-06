@@ -4,26 +4,9 @@
  * Or integrate into build process
  */
 
+import { getBlogSlugs, staticRoutes } from "./routes";
+
 const BASE_URL = 'https://vdsai.se';
-
-// Static page routes (without language prefix)
-const staticRoutes = [
-  '/',
-  '/services',
-  '/custom-ai',
-  '/agentic-workflows',
-  '/ai-readiness-test',
-  '/about',
-  '/contact',
-  '/privacy',
-  '/blog',
-];
-
-// Blog post slugs - keep in sync with vite.config.ts
-const blogSlugs = [
-  'rag-customer-support',
-  'building-ai-agents-practical-guide-smes',
-];
 
 interface SitemapUrl {
   loc: string;
@@ -70,7 +53,7 @@ function generateSitemapUrls(): SitemapUrl[] {
   }
 
   // Generate URLs for blog posts
-  for (const slug of blogSlugs) {
+  for (const slug of getBlogSlugs()) {
     const enUrl = `${BASE_URL}/blog/${slug}`;
     const svUrl = `${BASE_URL}/sv/blog/${slug}`;
     
