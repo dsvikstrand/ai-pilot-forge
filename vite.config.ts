@@ -20,6 +20,7 @@ const staticRoutes = [
 // Blog post slugs - add new blog posts here when you create them
 const blogSlugs = [
   'rag-customer-support',
+  'building-ai-agents-practical-guide-smes',
 ];
 
 // Generate all routes for pre-rendering (EN + SV)
