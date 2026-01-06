@@ -17,7 +17,7 @@ const staticRoutes = [
   '/blog',
 ];
 
-// Blog post slugs - add new blog posts here when you create them
+// Blog post slugs - add new blog posts here when you create them - Here
 const blogSlugs = [
   'rag-customer-support',
   'building-ai-agents-practical-guide-smes',
