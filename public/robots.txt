@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://vds.se/sitemap.xml
+Sitemap: https://vdsai.se/sitemap.xml

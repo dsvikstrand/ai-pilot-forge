@@ -9,8 +9,8 @@ interface OrganizationSchemaProps {
 
 export function OrganizationSchema({
   name = "Vikstrand Deep Solutions",
-  url = "https://vds.se",
-  logo = "https://vds.se/vds-logo.jpg",
+  url = "https://vdsai.se",
+  logo = "https://vdsai.se/vds-logo.jpg",
   description = "GPU-powered AI pilots for Swedish SMEs. From idea to working prototype—fast, measurable, and built to ship.",
 }: OrganizationSchemaProps = {}) {
   const schema = {
@@ -133,7 +133,7 @@ export function ArticleSchema({
       name: "Vikstrand Deep Solutions",
       logo: {
         "@type": "ImageObject",
-        url: "https://vds.se/vds-logo.jpg",
+        url: "https://vdsai.se/vds-logo.jpg",
       },
     },
     datePublished,
@@ -142,7 +142,7 @@ export function ArticleSchema({
     ...(keywords.length > 0 && { keywords: keywords.join(", ") }),
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://vds.se/blog",
+      "@id": "https://vdsai.se/blog",
     },
   };
 

@@ -67,7 +67,7 @@ export default defineConfig(({ mode }) => ({
         // Replace localhost URLs with production URL
         renderedRoute.html = renderedRoute.html
           .replace(/http:/gi, 'https:')
-          .replace(/(https:\/\/)?(localhost|127\.0\.0\.1):\d*/gi, 'https://vds.se');
+          .replace(/(https:\/\/)?(localhost|127\.0\.0\.1):\d*/gi, 'https://vdsai.se');
       },
     }),
   ].filter(Boolean),

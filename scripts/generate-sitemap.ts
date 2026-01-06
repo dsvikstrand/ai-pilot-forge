@@ -4,7 +4,7 @@
  * Or integrate into build process
  */
 
-const BASE_URL = 'https://vds.se';
+const BASE_URL = 'https://vdsai.se';
 
 // Static page routes (without language prefix)
 const staticRoutes = [
@@ -22,6 +22,7 @@ const staticRoutes = [
 // Blog post slugs - keep in sync with vite.config.ts
 const blogSlugs = [
   'rag-customer-support',
+  'building-ai-agents-practical-guide-smes',
 ];
 
 interface SitemapUrl {

@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import type { Language } from "@/i18n/translations";
 
-const BASE_URL = "https://vds.se";
+const BASE_URL = "https://vdsai.se";
 
 /**
  * Hook to get the current language from the URL path

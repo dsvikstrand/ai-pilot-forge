@@ -13,7 +13,7 @@ interface SEOProps {
   noindex?: boolean;
 }
 
-const BASE_URL = "https://vds.se";
+const BASE_URL = "https://vdsai.se";
 const DEFAULT_IMAGE = `${BASE_URL}/vds-og-image.jpg`;
 const SITE_NAME = "VDS - Vikstrand Deep Solutions";
 

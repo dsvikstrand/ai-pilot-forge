@@ -287,7 +287,7 @@ export const translations = {
       },
       contactPrivacy: {
         title: { sv: "Kontakt", en: "Contact" },
-        content: { sv: "Om du har frågor om denna integritetspolicy eller hur vi hanterar dina uppgifter, vänligen kontakta oss på hello@vds.se.", en: "If you have questions about this privacy policy or how we handle your data, please contact us at hello@vds.se." },
+        content: { sv: "Om du har frågor om denna integritetspolicy eller hur vi hanterar dina uppgifter, vänligen kontakta oss på hello@vdsai.se.", en: "If you have questions about this privacy policy or how we handle your data, please contact us at hello@vdsai.se." },
       },
     },
   },
