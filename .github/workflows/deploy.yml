@@ -40,8 +40,8 @@ jobs:
         run: touch dist/.nojekyll
 
       # If you use react-router BrowserRouter and want refresh/deep-link support:
-      # - name: SPA fallback
-      #   run: cp dist/index.html dist/404.html
+      - name: SPA fallback
+        run: cp dist/index.html dist/404.html
 
       - name: Debug dist
         run: |
