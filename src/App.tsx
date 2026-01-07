@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index";
@@ -22,7 +22,8 @@ const queryClient = new QueryClient();
 // Define all page routes (without language prefix)
 const PageRoutes = () => (
   <Routes>
-    <Route path="/" element={<Index />} />
+    {/* Redirect root to Swedish */}
+    <Route path="/" element={<Navigate to="/sv" replace />} />
     <Route path="/services" element={<Services />} />
     <Route path="/custom-ai" element={<CustomAI />} />
     <Route path="/agentic-workflows" element={<AgenticWorkflows />} />
