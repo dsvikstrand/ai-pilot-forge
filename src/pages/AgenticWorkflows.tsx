@@ -185,8 +185,8 @@ export default function AgenticWorkflows() {
         </div>
       </section>
 
-      {/* What are Agentic Workflows */}
-      <section className="py-20 lg:py-28">
+      {/* What are Agentic Workflows - hidden on mobile */}
+      <section className="hidden md:block py-20 lg:py-28">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-6 text-center text-3xl font-bold md:text-4xl">
@@ -222,8 +222,8 @@ export default function AgenticWorkflows() {
         </div>
       </section>
 
-      {/* Benefits for SMEs */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      {/* Benefits for SMEs - hidden on mobile */}
+      <section className="hidden md:block bg-secondary/30 py-20 lg:py-28">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h2 className="text-3xl font-bold md:text-4xl">
@@ -247,8 +247,8 @@ export default function AgenticWorkflows() {
         </div>
       </section>
 
-      {/* Use Cases */}
-      <section className="py-20 lg:py-28">
+      {/* Use Cases - hidden on mobile */}
+      <section className="hidden md:block py-20 lg:py-28">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h2 className="text-3xl font-bold md:text-4xl">
@@ -319,8 +319,8 @@ export default function AgenticWorkflows() {
         </div>
       </section>
 
-      {/* How We Work */}
-      <section className="py-20 lg:py-28">
+      {/* How We Work - hidden on mobile */}
+      <section className="hidden md:block py-20 lg:py-28">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold md:text-4xl">

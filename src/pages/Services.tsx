@@ -38,16 +38,18 @@ const Services = () => {
           </div>
         </div>
       </section>
-      <section className="py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard key={service.title} icon={service.icon} title={service.title} description={service.description} />
+            {services.map((service, index) => (
+              <div key={service.title} className={index >= 3 ? "hidden md:block" : ""}>
+                <ServiceCard icon={service.icon} title={service.title} description={service.description} />
+              </div>
             ))}
           </div>
         </div>
       </section>
-      <section className="bg-secondary/30 py-16 lg:py-24">
+      <section className="hidden md:block bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-8 text-center text-3xl font-bold">{t(translations.servicesPage.deliverables.title, language)}</h2>

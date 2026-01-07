@@ -133,13 +133,13 @@ export default function CustomAI() {
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-20 lg:py-28 bg-background">
+      {/* Problem Section - show only 2 cards on mobile */}
+      <section className="py-12 md:py-20 lg:py-28 bg-background">
         <div
           ref={problemRef}
           className="container mx-auto px-4 lg:px-8 scroll-reveal"
         >
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-4">
               {t(tr.problem.title, language)}
             </h2>
@@ -157,7 +157,7 @@ export default function CustomAI() {
             ].map((item, index) => (
               <Card
                 key={index}
-                className="border-border/50 bg-card shadow-soft hover:shadow-medium transition-shadow"
+                className={`border-border/50 bg-card shadow-soft hover:shadow-medium transition-shadow ${index >= 2 ? "hidden md:block" : ""}`}
               >
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3">
@@ -180,8 +180,8 @@ export default function CustomAI() {
         </div>
       </section>
 
-      {/* Pipeline Section */}
-      <section id="pipeline" className="py-20 lg:py-28 bg-secondary/30">
+      {/* Pipeline Section - hidden on mobile */}
+      <section id="pipeline" className="hidden md:block py-20 lg:py-28 bg-secondary/30">
         <div
           ref={pipelineRef}
           className="container mx-auto px-4 lg:px-8 scroll-reveal"
@@ -238,8 +238,8 @@ export default function CustomAI() {
         </div>
       </section>
 
-      {/* Training Explanation Section */}
-      <section className="py-20 lg:py-28 bg-background">
+      {/* Training Explanation Section - hidden on mobile */}
+      <section className="hidden md:block py-20 lg:py-28 bg-background">
         <div
           ref={trainingRef}
           className="container mx-auto px-4 lg:px-8 scroll-reveal"
@@ -289,8 +289,8 @@ export default function CustomAI() {
         </div>
       </section>
 
-      {/* Comparison Section */}
-      <section className="py-20 lg:py-28 bg-secondary/30">
+      {/* Comparison Section - hidden on mobile */}
+      <section className="hidden md:block py-20 lg:py-28 bg-secondary/30">
         <div
           ref={comparisonRef}
           className="container mx-auto px-4 lg:px-8 scroll-reveal"
@@ -354,8 +354,8 @@ export default function CustomAI() {
         </div>
       </section>
 
-      {/* Business Value Section */}
-      <section className="py-20 lg:py-28 bg-background">
+      {/* Business Value Section - hidden on mobile */}
+      <section className="hidden md:block py-20 lg:py-28 bg-background">
         <div
           ref={valueRef}
           className="container mx-auto px-4 lg:px-8 scroll-reveal"
@@ -407,8 +407,8 @@ export default function CustomAI() {
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="py-20 lg:py-28 bg-secondary/30">
+      {/* Use Cases Section - hidden on mobile */}
+      <section className="hidden md:block py-20 lg:py-28 bg-secondary/30">
         <div
           ref={useCasesRef}
           className="container mx-auto px-4 lg:px-8 scroll-reveal"
@@ -472,8 +472,8 @@ export default function CustomAI() {
         </div>
       </section>
 
-      {/* AI Readiness CTA */}
-      <section className="py-16 lg:py-20 bg-accent/10 border-y border-accent/20">
+      {/* AI Readiness CTA - hidden on mobile */}
+      <section className="hidden md:block py-16 lg:py-20 bg-accent/10 border-y border-accent/20">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <div className="max-w-2xl mx-auto">
             <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
@@ -496,7 +496,7 @@ export default function CustomAI() {
       </section>
 
       {/* Tiers Section - AI Pilots */}
-      <section id="pilots" className="py-20 lg:py-28 bg-background">
+      <section id="pilots" className="py-12 md:py-20 lg:py-28 bg-background">
         <div
           ref={tiersRef}
           className="container mx-auto px-4 lg:px-8 scroll-reveal"
@@ -573,8 +573,8 @@ export default function CustomAI() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 lg:py-28 bg-secondary/30">
+      {/* FAQ Section - hidden on mobile */}
+      <section className="hidden md:block py-20 lg:py-28 bg-secondary/30">
         <div
           ref={faqRef}
           className="container mx-auto px-4 lg:px-8 scroll-reveal"
@@ -603,7 +603,7 @@ export default function CustomAI() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 lg:py-28 hero-gradient">
+      <section className="py-12 md:py-20 lg:py-28 hero-gradient">
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-primary-foreground sm:text-4xl mb-4">
             {t(tr.finalCta.title, language)}

@@ -18,9 +18,15 @@ const Index = () => {
       />
       <HeroSection />
       <ServicesOverview />
-      <AgenticWorkflowsSection />
-      <HowItWorks />
-      <WhyVDS />
+      <div className="hidden md:block">
+        <AgenticWorkflowsSection />
+      </div>
+      <div className="hidden md:block">
+        <HowItWorks />
+      </div>
+      <div className="hidden md:block">
+        <WhyVDS />
+      </div>
       <ContactCTA />
     </Layout>
   );
