@@ -24,15 +24,19 @@ const PageRoutes = () => (
   <Routes>
     {/* Redirect root to Swedish */}
     <Route path="/" element={<Navigate to="/sv" replace />} />
-    <Route path="/services" element={<Services />} />
-    <Route path="/custom-ai" element={<CustomAI />} />
-    <Route path="/agentic-workflows" element={<AgenticWorkflows />} />
-    <Route path="/ai-readiness-test" element={<AIReadinessTest />} />
-    <Route path="/about" element={<About />} />
-    <Route path="/contact" element={<Contact />} />
-    <Route path="/privacy" element={<Privacy />} />
-    <Route path="/blog" element={<Blog />} />
-    <Route path="/blog/:slug" element={<BlogPost />} />
+    
+    {/* English routes */}
+    <Route path="/en" element={<Index />} />
+    <Route path="/en/services" element={<Services />} />
+    <Route path="/en/custom-ai" element={<CustomAI />} />
+    <Route path="/en/agentic-workflows" element={<AgenticWorkflows />} />
+    <Route path="/en/ai-readiness-test" element={<AIReadinessTest />} />
+    <Route path="/en/about" element={<About />} />
+    <Route path="/en/contact" element={<Contact />} />
+    <Route path="/en/privacy" element={<Privacy />} />
+    <Route path="/en/blog" element={<Blog />} />
+    <Route path="/en/blog/:slug" element={<BlogPost />} />
+    
     {/* Swedish routes - same components, language derived from URL */}
     <Route path="/sv" element={<Index />} />
     <Route path="/sv/services" element={<Services />} />
@@ -44,6 +48,7 @@ const PageRoutes = () => (
     <Route path="/sv/privacy" element={<Privacy />} />
     <Route path="/sv/blog" element={<Blog />} />
     <Route path="/sv/blog/:slug" element={<BlogPost />} />
+    
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />
   </Routes>
