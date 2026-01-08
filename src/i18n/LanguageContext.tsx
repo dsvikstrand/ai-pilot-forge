@@ -15,7 +15,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   
   // Derive language from URL path
   const language: Language = useMemo(() => {
-    return location.pathname.startsWith("/sv") ? "sv" : "en";
+    if (location.pathname.startsWith("/en")) return "en";
+    return "sv"; // Default to Swedish
   }, [location.pathname]);
 
   // Switch language by navigating to the equivalent path
@@ -23,18 +24,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const currentPath = location.pathname;
     const searchParams = location.search;
     
+    // Get the path without the language prefix
+    const pathWithoutLang = currentPath.replace(/^\/(sv|en)/, "") || "";
+    
     if (lang === "sv") {
-      // Add /sv prefix if not already present
-      if (!currentPath.startsWith("/sv")) {
-        const newPath = currentPath === "/" ? "/sv" : `/sv${currentPath}`;
-        navigate(newPath + searchParams);
-      }
+      navigate(`/sv${pathWithoutLang}${searchParams}`);
     } else {
-      // Remove /sv prefix for English
-      if (currentPath.startsWith("/sv")) {
-        const newPath = currentPath.replace(/^\/sv/, "") || "/";
-        navigate(newPath + searchParams);
-      }
+      navigate(`/en${pathWithoutLang}${searchParams}`);
     }
   };
 
