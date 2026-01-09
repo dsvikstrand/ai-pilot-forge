@@ -3,7 +3,6 @@ import { SEO } from "@/components/SEO";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { AgenticWorkflowsSection } from "@/components/sections/AgenticWorkflowsSection";
-import { HowItWorks } from "@/components/sections/HowItWorks";
 import { WhyVDS } from "@/components/sections/WhyVDS";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
@@ -20,9 +19,6 @@ const Index = () => {
       <ServicesOverview />
       <div className="hidden md:block">
         <AgenticWorkflowsSection />
-      </div>
-      <div className="hidden md:block">
-        <HowItWorks />
       </div>
       <div className="hidden md:block">
         <WhyVDS />
