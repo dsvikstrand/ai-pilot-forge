@@ -18,10 +18,8 @@ export function Header() {
 
   // Helper to get localized path
   const getLocalizedPath = (basePath: string): string => {
-    if (language === "sv") {
-      return basePath === "/" ? "/sv" : `/sv${basePath}`;
-    }
-    return basePath;
+    const prefix = language === "sv" ? "/sv" : "/en";
+    return basePath === "/" ? prefix : `${prefix}${basePath}`;
   };
 
   // Get current path without language prefix for comparison

@@ -25,12 +25,10 @@ export function useLocalizedLink() {
    */
   const getLocalizedPath = (path: string): string => {
     // Remove any existing language prefix
-    const cleanPath = path.replace(/^\/sv/, "");
+    const cleanPath = path.replace(/^\/(sv|en)/, "");
+    const prefix = language === "sv" ? "/sv" : "/en";
     
-    if (language === "sv") {
-      return cleanPath === "/" ? "/sv" : `/sv${cleanPath}`;
-    }
-    return cleanPath || "/";
+    return cleanPath === "" || cleanPath === "/" ? prefix : `${prefix}${cleanPath}`;
   };
   
   /**
@@ -40,14 +38,14 @@ export function useLocalizedLink() {
    */
   const getAlternateLanguagePath = (currentPath: string): string => {
     const isSwedish = currentPath.startsWith("/sv");
+    const cleanPath = currentPath.replace(/^\/(sv|en)/, "") || "";
     
     if (isSwedish) {
-      // Switch to English: remove /sv prefix
-      const englishPath = currentPath.replace(/^\/sv/, "") || "/";
-      return englishPath;
+      // Switch to English
+      return cleanPath === "" ? "/en" : `/en${cleanPath}`;
     } else {
-      // Switch to Swedish: add /sv prefix
-      return currentPath === "/" ? "/sv" : `/sv${currentPath}`;
+      // Switch to Swedish
+      return cleanPath === "" ? "/sv" : `/sv${cleanPath}`;
     }
   };
   
@@ -63,12 +61,12 @@ export function useLocalizedLink() {
    */
   const getHreflangUrls = (basePath: string): { en: string; sv: string; xDefault: string } => {
     // basePath should be the path without language prefix (e.g., "/blog/slug")
-    const cleanPath = basePath.replace(/^\/sv/, "") || "/";
+    const cleanPath = basePath.replace(/^\/(sv|en)/, "") || "";
     
     return {
-      en: `${BASE_URL}${cleanPath}`,
-      sv: cleanPath === "/" ? `${BASE_URL}/sv` : `${BASE_URL}/sv${cleanPath}`,
-      xDefault: `${BASE_URL}${cleanPath}`,
+      en: cleanPath === "" ? `${BASE_URL}/en` : `${BASE_URL}/en${cleanPath}`,
+      sv: cleanPath === "" ? `${BASE_URL}/sv` : `${BASE_URL}/sv${cleanPath}`,
+      xDefault: cleanPath === "" ? `${BASE_URL}/sv` : `${BASE_URL}/sv${cleanPath}`,
     };
   };
   
@@ -85,5 +83,5 @@ export function useLocalizedLink() {
  * Utility function to get the base path without language prefix
  */
 export function getBasePath(path: string): string {
-  return path.replace(/^\/sv/, "") || "/";
+  return path.replace(/^\/(sv|en)/, "") || "/";
 }

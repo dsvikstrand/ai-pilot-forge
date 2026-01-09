@@ -9,7 +9,8 @@ export function HeroSection() {
   
   // Helper to get localized path
   const getLocalizedPath = (basePath: string): string => {
-    return language === "sv" ? `/sv${basePath}` : basePath;
+    const prefix = language === "sv" ? "/sv" : "/en";
+    return basePath === "/" ? prefix : `${prefix}${basePath}`;
   };
   return (
     <section className="relative overflow-hidden hero-gradient">
