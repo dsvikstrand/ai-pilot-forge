@@ -103,11 +103,6 @@ export function ContactCTA() {
             </form>
           ) : (
             <div className="text-center">
-              <p className="mb-6 text-primary-foreground/80">
-                {language === "sv" 
-                  ? "Kontaktformuläret kommer snart! Under tiden, kontakta oss direkt:"
-                  : "Contact form coming soon! In the meantime, reach us directly:"}
-              </p>
               <Button
                 asChild
                 variant="hero"
