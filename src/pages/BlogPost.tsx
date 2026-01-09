@@ -27,7 +27,8 @@ export default function BlogPost() {
   
   // Helper to get localized paths
   const getLocalizedPath = (basePath: string): string => {
-    return language === "sv" ? `/sv${basePath}` : basePath;
+    const prefix = language === "sv" ? "/sv" : "/en";
+    return basePath === "/" ? prefix : `${prefix}${basePath}`;
   };
   
   const getLocalizedBlogPath = (postSlug: string): string => {
