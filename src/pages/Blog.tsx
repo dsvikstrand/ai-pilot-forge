@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/SEO";
+import { PageBreadcrumb, BreadcrumbSchema } from "@/components/PageBreadcrumb";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -21,6 +22,8 @@ const blogTranslations = {
 export default function Blog() {
   const { language } = useLanguage();
   const posts = getAllPosts();
+  const prefix = language === "sv" ? "/sv" : "/en";
+  const baseUrl = "https://vdsai.se";
 
   const t = (obj: { sv: string; en: string }) => obj[language];
   
@@ -37,9 +40,20 @@ export default function Blog() {
         descriptionEn="Insights on AI, machine learning, and practical solutions for Swedish SMEs. Learn about RAG systems, visual search, and AI implementation strategies."
         descriptionSv="Insikter om AI, maskininlärning och praktiska lösningar för svenska SMF. Läs om RAG-system, visuell sökning och AI-implementeringsstrategier."
       />
+      <BreadcrumbSchema 
+        items={[
+          { name: language === "sv" ? "Hem" : "Home", url: `${baseUrl}${prefix}` },
+          { name: t(blogTranslations.title), url: `${baseUrl}${prefix}/blog` }
+        ]} 
+      />
 
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 lg:px-8">
+          {/* Breadcrumb */}
+          <div className="mx-auto max-w-3xl">
+            <PageBreadcrumb items={[{ label: t(blogTranslations.title) }]} />
+          </div>
+          
           {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">

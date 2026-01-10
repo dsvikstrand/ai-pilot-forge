@@ -8,6 +8,8 @@ import { Calendar, Clock, ArrowLeft, User } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/SEO";
 import { ArticleSchema } from "@/components/StructuredData";
+import { PageBreadcrumb, BreadcrumbSchema } from "@/components/PageBreadcrumb";
+import { RelatedServices } from "@/components/RelatedServices";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -22,12 +24,14 @@ const blogPostTranslations = {
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const { language } = useLanguage();
+  const prefix = language === "sv" ? "/sv" : "/en";
+  const baseUrl = "https://vdsai.se";
+  const blogLabel = language === "sv" ? "Blogg" : "Blog";
 
   const t = (obj: { sv: string; en: string }) => obj[language];
   
   // Helper to get localized paths
   const getLocalizedPath = (basePath: string): string => {
-    const prefix = language === "sv" ? "/sv" : "/en";
     return basePath === "/" ? prefix : `${prefix}${basePath}`;
   };
   
@@ -67,17 +71,24 @@ export default function BlogPost() {
         image={post.image}
         keywords={post.keywords}
       />
+      <BreadcrumbSchema 
+        items={[
+          { name: language === "sv" ? "Hem" : "Home", url: `${baseUrl}${prefix}` },
+          { name: blogLabel, url: `${baseUrl}${prefix}/blog` },
+          { name: post.title[language], url: `${baseUrl}${prefix}/blog/${slug}` }
+        ]} 
+      />
 
       <article className="py-20 md:py-28">
         <div className="container mx-auto px-4 lg:px-8">
-          {/* Back button */}
+          {/* Breadcrumb */}
           <div className="mx-auto max-w-3xl">
-            <Button variant="ghost" asChild className="mb-8">
-              <Link to={getLocalizedPath("/blog")} className="flex items-center gap-2">
-                <ArrowLeft className="h-4 w-4" />
-                {t(blogPostTranslations.backToBlog)}
-              </Link>
-            </Button>
+            <PageBreadcrumb 
+              items={[
+                { label: blogLabel, href: `${prefix}/blog` },
+                { label: post.title[language] }
+              ]} 
+            />
           </div>
 
           {/* Article header */}
@@ -167,6 +178,11 @@ export default function BlogPost() {
               </div>
             </section>
           )}
+
+          {/* Related services */}
+          <div className="mx-auto mt-16 max-w-3xl">
+            <RelatedServices maxItems={3} />
+          </div>
         </div>
       </article>
     </Layout>
