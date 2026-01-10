@@ -1,5 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/SEO";
+import { PageBreadcrumb, BreadcrumbSchema } from "@/components/PageBreadcrumb";
+import { RelatedServices } from "@/components/RelatedServices";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -10,6 +12,8 @@ const About = () => {
   const { language } = useLanguage();
   const context = tArray(translations.aboutPage.context, language);
   const howIWork = tArray(translations.aboutPage.howIWorkItems, language);
+  const prefix = language === "sv" ? "/sv" : "/en";
+  const baseUrl = "https://vdsai.se";
 
   return (
     <Layout>
@@ -19,11 +23,22 @@ const About = () => {
         descriptionEn="Learn about the founder of VDS and how we help Swedish SMEs implement GPU-powered AI solutions. From idea to working prototype."
         descriptionSv="Lär dig om grundaren av VDS och hur vi hjälper svenska SMF att implementera GPU-drivna AI-lösningar. Från idé till fungerande prototyp."
       />
+      <BreadcrumbSchema 
+        items={[
+          { name: language === "sv" ? "Hem" : "Home", url: `${baseUrl}${prefix}` },
+          { name: t(translations.aboutPage.title, language), url: `${baseUrl}${prefix}/about` }
+        ]} 
+      />
       <section className="bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold md:text-5xl">{t(translations.aboutPage.title, language)}</h1>
-            <p className="mt-4 text-lg text-muted-foreground">{t(translations.aboutPage.subtitle, language)}</p>
+          <div className="mx-auto max-w-3xl">
+            <PageBreadcrumb 
+              items={[{ label: t(translations.aboutPage.title, language) }]} 
+            />
+            <div className="text-center">
+              <h1 className="text-4xl font-bold md:text-5xl">{t(translations.aboutPage.title, language)}</h1>
+              <p className="mt-4 text-lg text-muted-foreground">{t(translations.aboutPage.subtitle, language)}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -58,6 +73,13 @@ const About = () => {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <RelatedServices maxItems={3} />
           </div>
         </div>
       </section>

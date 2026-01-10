@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/SEO";
+import { PageBreadcrumb, BreadcrumbSchema } from "@/components/PageBreadcrumb";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { Mail, MapPin, Github, Linkedin } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -7,6 +8,9 @@ import { translations, t } from "@/i18n/translations";
 
 const Contact = () => {
   const { language } = useLanguage();
+  const prefix = language === "sv" ? "/sv" : "/en";
+  const baseUrl = "https://vdsai.se";
+  const title = language === "sv" ? "Kontakt" : "Contact";
 
   return (
     <Layout>
@@ -16,11 +20,20 @@ const Contact = () => {
         descriptionEn="Get in touch to discuss your AI project. Email david@vdsai.se or connect on LinkedIn and GitHub."
         descriptionSv="Hör av dig för att diskutera ditt AI-projekt. E-post david@vdsai.se eller anslut via LinkedIn och GitHub."
       />
+      <BreadcrumbSchema 
+        items={[
+          { name: language === "sv" ? "Hem" : "Home", url: `${baseUrl}${prefix}` },
+          { name: title, url: `${baseUrl}${prefix}/contact` }
+        ]} 
+      />
       <section className="bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold md:text-5xl">{t(translations.contactPage.title, language)}</h1>
-            <p className="mt-4 text-lg text-muted-foreground">{t(translations.contactPage.subtitle, language)}</p>
+          <div className="mx-auto max-w-3xl">
+            <PageBreadcrumb items={[{ label: title }]} />
+            <div className="text-center">
+              <h1 className="text-4xl font-bold md:text-5xl">{t(translations.contactPage.title, language)}</h1>
+              <p className="mt-4 text-lg text-muted-foreground">{t(translations.contactPage.subtitle, language)}</p>
+            </div>
           </div>
         </div>
       </section>

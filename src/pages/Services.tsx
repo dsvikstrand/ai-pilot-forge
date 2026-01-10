@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/SEO";
-import { ProfessionalServiceSchema } from "@/components/StructuredData";
+import { ProfessionalServiceSchema, FAQSchema } from "@/components/StructuredData";
+import { PageBreadcrumb, BreadcrumbSchema } from "@/components/PageBreadcrumb";
+import { BlogCTA } from "@/components/BlogCTA";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { ServiceDetailModal, ServiceDetail } from "@/components/ui/ServiceDetailModal";
 import { ContactCTA } from "@/components/sections/ContactCTA";
@@ -108,6 +110,31 @@ const Services = () => {
     setModalOpen(true);
   };
 
+  const prefix = language === "sv" ? "/sv" : "/en";
+  const baseUrl = "https://vdsai.se";
+  
+  // FAQ items for structured data
+  const faqItems = [
+    {
+      question: language === "sv" ? "Vilka AI-tjänster erbjuder ni?" : "What AI services do you offer?",
+      answer: language === "sv" 
+        ? "Vi erbjuder RAG-system, visuell sökning, inferensoptimering, auto-taggning, prototyping och driftsättningsvägledning för svenska SMF."
+        : "We offer RAG systems, visual search, inference optimization, auto-tagging, prototyping, and deployment guidance for Swedish SMEs."
+    },
+    {
+      question: language === "sv" ? "Hur lång tid tar ett typiskt projekt?" : "How long does a typical project take?",
+      answer: language === "sv"
+        ? "De flesta projekt tar 1-4 veckor beroende på omfattning. En RAG-utvärdering tar typiskt 1-2 veckor, medan prototyping kan ta 2-4 veckor."
+        : "Most projects take 1-4 weeks depending on scope. A RAG evaluation typically takes 1-2 weeks, while prototyping can take 2-4 weeks."
+    },
+    {
+      question: language === "sv" ? "Levererar ni kod?" : "Do you deliver code?",
+      answer: language === "sv"
+        ? "Ja, varje uppdrag inkluderar ett rent repository med källkod, dokumentation och tydliga instruktioner som ert team kan äga."
+        : "Yes, every engagement includes a clean repository with source code, documentation, and clear instructions your team can own."
+    }
+  ];
+
   return (
     <Layout>
       <SEO
@@ -117,11 +144,23 @@ const Services = () => {
         descriptionSv="Specialiserade AI-tjänster inklusive RAG-system, visuell sökning, inferensoptimering, auto-taggning, prototyping och driftsättning för svenska SMF."
       />
       <ProfessionalServiceSchema />
+      <FAQSchema items={faqItems} />
+      <BreadcrumbSchema 
+        items={[
+          { name: language === "sv" ? "Hem" : "Home", url: `${baseUrl}${prefix}` },
+          { name: t(translations.servicesPage.title, language), url: `${baseUrl}${prefix}/services` }
+        ]} 
+      />
       <section className="bg-secondary/30 py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold md:text-5xl">{t(translations.servicesPage.title, language)}</h1>
-            <p className="mt-4 text-lg text-muted-foreground">{t(translations.servicesPage.subtitle, language)}</p>
+          <div className="mx-auto max-w-3xl">
+            <PageBreadcrumb 
+              items={[{ label: t(translations.servicesPage.title, language) }]} 
+            />
+            <div className="text-center">
+              <h1 className="text-4xl font-bold md:text-5xl">{t(translations.servicesPage.title, language)}</h1>
+              <p className="mt-4 text-lg text-muted-foreground">{t(translations.servicesPage.subtitle, language)}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -159,6 +198,7 @@ const Services = () => {
           </div>
         </div>
       </section>
+      <BlogCTA />
       <ContactCTA />
       
       <ServiceDetailModal 
